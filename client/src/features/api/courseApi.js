@@ -21,9 +21,9 @@ export const courseApi = createApi({
     getSearchCourse: builder.query({
       query: ({ searchQuery, categories, sortByPrice }) => {
         // Build qiery string
-        let queryString = `/search?query=${encodeURIComponent(searchQuery)}`
+        let queryString = `/search?query=${encodeURIComponent(searchQuery)}`;
 
-        // append cateogry 
+        // append cateogry
         if (categories && categories.length > 0) {
           const categoriesString = categories.map(encodeURIComponent).join(",");
           queryString += `&categories=${categoriesString}`;
@@ -37,8 +37,8 @@ export const courseApi = createApi({
         return {
           url: queryString,
           method: "GET",
-        }
-      }
+        };
+      },
     }),
     getPublishedCourse: builder.query({
       query: () => ({
@@ -115,12 +115,11 @@ export const courseApi = createApi({
     }),
     deleteCourse: builder.mutation({
       query: (courseId) => ({
-          url: `/${courseId}`,
-          method: "DELETE",
+        url: `/${courseId}`,
+        method: "DELETE",
       }),
       invalidatesTags: ["Refetch_Creator_Course"],
     }),
-
   }),
 });
 export const {

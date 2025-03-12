@@ -1,15 +1,38 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useGetPurchasedCoursesQuery } from "@/features/api/purchaseApi";
 import React, { useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { Loader2 } from "lucide-react";
 
 const Dashboard = () => {
-  const { data, isSuccess, isError, isLoading, refetch } = useGetPurchasedCoursesQuery(undefined, {
-    pollingInterval: 10000,
-    refetchOnMountOrArgChange: true,
-    refetchOnFocus: true,
-    refetchOnReconnect: true,
-  });
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+
+  // Kiểm tra quyền instructor
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
+
+  if (user?.role !== "instructor") {
+    return <Navigate to="/" />;
+  }
+
+  const { data, isSuccess, isError, isLoading, refetch } =
+    useGetPurchasedCoursesQuery(undefined, {
+      pollingInterval: 10000,
+      refetchOnMountOrArgChange: true,
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    });
 
   useEffect(() => {
     // Refetch khi component mount
@@ -24,14 +47,35 @@ const Dashboard = () => {
     return () => clearInterval(interval);
   }, [refetch]);
 
-  if (isLoading) return <h1>Loading...</h1>;
-  if (isError) return <h1 className="text-red-500">Failed to get purchased course</h1>;
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <Loader2 className="w-8 h-8 animate-spin" />
+        <span className="ml-2">Đang tải dữ liệu...</span>
+      </div>
+    );
+  }
+
+  if (isError)
+    return (
+      <div className="text-red-500 p-6">
+        Không thể tải dữ liệu khóa học đã mua
+      </div>
+    );
 
   const purchasedCourse = data?.purchasedCourse || [];
 
+  // Chỉ lấy khóa học của instructor đang đăng nhập
+  const instructorPurchases = purchasedCourse.filter(
+    (purchase) =>
+      purchase.courseId.creator && purchase.courseId.creator._id === user._id
+  );
+
   // Tạo dữ liệu cho biểu đồ với định dạng tiền tệ VND
-  const courseData = purchasedCourse.reduce((acc, purchase) => {
-    const existingCourse = acc.find(item => item.name === purchase.courseId.courseTitle);
+  const courseData = instructorPurchases.reduce((acc, purchase) => {
+    const existingCourse = acc.find(
+      (item) => item.name === purchase.courseId.courseTitle
+    );
     if (existingCourse) {
       existingCourse.totalSales += 1;
       existingCourse.totalRevenue += purchase.amount;
@@ -40,89 +84,122 @@ const Dashboard = () => {
         name: purchase.courseId.courseTitle,
         totalSales: 1,
         totalRevenue: purchase.amount,
-        price: purchase.courseId.coursePrice
+        price: purchase.courseId.coursePrice,
       });
     }
     return acc;
   }, []);
 
   // Tính tổng doanh thu từ amount
-  const totalRevenue = purchasedCourse.reduce((acc, purchase) => {
-    return acc + purchase.amount;
-  }, 0);
+  const totalRevenue = instructorPurchases.reduce(
+    (acc, purchase) => acc + purchase.amount,
+    0
+  );
 
-  const totalSales = purchasedCourse.length;
+  // Tính tổng số lượng bán
+  const totalSales = instructorPurchases.length;
 
-  // Format số tiền sang định dạng VND
+  // Định dạng tiền tệ VND
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('vi-VN', {
-      style: 'currency',
-      currency: 'VND'
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
     }).format(amount);
   };
 
   return (
-    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-6">Bảng điều khiển</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Tổng doanh thu
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">
+              {formatCurrency(totalRevenue)}
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Tổng khóa học bán ra
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{totalSales}</div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Số lượng khóa học
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{courseData.length}</div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="mb-8">
         <CardHeader>
-          <CardTitle>Tổng bán</CardTitle>
+          <CardTitle>Doanh thu theo khóa học</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-3xl font-bold text-blue-600">{totalSales}</p>
-          <p className="text-sm text-gray-500 mt-1">Số lượng khóa học đã bán</p>
+          {courseData.length > 0 ? (
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={courseData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip formatter={(value) => formatCurrency(value)} />
+                <Line
+                  type="monotone"
+                  dataKey="totalRevenue"
+                  stroke="#8884d8"
+                  activeDot={{ r: 8 }}
+                  name="Doanh thu"
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="text-center py-10 text-gray-500">
+              Chưa có dữ liệu doanh thu
+            </div>
+          )}
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <Card>
         <CardHeader>
-          <CardTitle>Tổng doanh thu</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-3xl font-bold text-blue-600">{formatCurrency(totalRevenue)}</p>
-          <p className="text-sm text-gray-500 mt-1">Tổng doanh thu từ các khóa học</p>
-        </CardContent>
-      </Card>
-
-      {/* Course Sales and Revenue Card */}
-      <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4">
-        <CardHeader>
-          <CardTitle className="text-xl font-semibold text-gray-700">
-            Thống kê theo khóa học
-          </CardTitle>
+          <CardTitle>Chi tiết khóa học</CardTitle>
         </CardHeader>
         <CardContent>
           {courseData.length > 0 ? (
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
+              <table className="w-full">
                 <thead>
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Tên khóa học
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Giá bán
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Số lượng bán
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Doanh thu
-                    </th>
+                  <tr className="border-b">
+                    <th className="text-left py-2">Tên khóa học</th>
+                    <th className="text-right py-2">Giá bán</th>
+                    <th className="text-right py-2">Số lượng bán</th>
+                    <th className="text-right py-2">Tổng doanh thu</th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody>
                   {courseData.map((course, index) => (
-                    <tr key={index}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {course.name}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <tr key={index} className="border-b">
+                      <td className="py-2">{course.name}</td>
+                      <td className="text-right py-2">
                         {formatCurrency(course.price)}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {course.totalSales}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="text-right py-2">{course.totalSales}</td>
+                      <td className="text-right py-2">
                         {formatCurrency(course.totalRevenue)}
                       </td>
                     </tr>
@@ -131,7 +208,9 @@ const Dashboard = () => {
               </table>
             </div>
           ) : (
-            <p className="text-center text-gray-500">Chưa có dữ liệu bán hàng</p>
+            <div className="text-center py-6 text-gray-500">
+              Chưa có dữ liệu bán hàng
+            </div>
           )}
         </CardContent>
       </Card>

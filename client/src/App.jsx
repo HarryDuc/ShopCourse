@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import HeroSection from "./pages/student/HeroSection";
@@ -16,7 +20,7 @@ import EditLecture from "./pages/instructor/lecture/EditLecture";
 import CourseDetail from "./pages/student/CourseDetail";
 import CourseProgress from "./pages/student/CourseProgress";
 import SearchPage from "./pages/student/SearchPage";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import {
   InstructorRoute,
   AuthenticatedUser,
@@ -28,6 +32,31 @@ import LearningUI from "./pages/home";
 import Footer from "./pages/footer";
 import PromoSection from "./pages/student/slide";
 import VoucherManagement from "./pages/instructor/voucher/VoucherManagement";
+// Admin imports
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import UserManagement from "./pages/admin/UserManagement";
+import InstructorRequests from "./pages/admin/InstructorRequests";
+import { useSelector } from "react-redux";
+
+// Admin Route Component
+const AdminRoute = ({ children }) => {
+  return (
+    <ProtectedRoute>
+      <AdminOnlyRoute>{children}</AdminOnlyRoute>
+    </ProtectedRoute>
+  );
+};
+
+// Admin Only Route Component
+const AdminOnlyRoute = ({ children }) => {
+  const { user } = useSelector((state) => state.auth);
+
+  if (user?.role !== "admin") {
+    return <Navigate to="/" />;
+  }
+
+  return children;
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -138,6 +167,31 @@ const appRouter = createBrowserRouter([
             element: <VoucherManagement />,
           },
         ],
+      },
+      // Admin Routes
+      {
+        path: "admin",
+        element: (
+          <AdminRoute>
+            <AdminDashboard />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/users",
+        element: (
+          <AdminRoute>
+            <UserManagement />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/instructor-requests",
+        element: (
+          <AdminRoute>
+            <InstructorRequests />
+          </AdminRoute>
+        ),
       },
     ],
   },
