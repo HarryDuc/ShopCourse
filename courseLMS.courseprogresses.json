@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "67d7036cf437305f9bf94f4c"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "courseId": {
+    "$oid": "67d6cf0539bf1dbb25984378"
+  },
+  "completed": false,
+  "lectureProgress": [],
+  "createdAt": {
+    "$date": "2025-03-16T16:59:24.466Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:59:24.466Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7038ef437305f9bf94fbb"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "courseId": {
+    "$oid": "67d70072f437305f9bf94e8f"
+  },
+  "completed": false,
+  "lectureProgress": [],
+  "createdAt": {
+    "$date": "2025-03-16T16:59:58.281Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:59:58.281Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7069df437305f9bf95316"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "completed": false,
+  "lectureProgress": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:13:01.981Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:01.981Z"
+  },
+  "__v": 0
+}]

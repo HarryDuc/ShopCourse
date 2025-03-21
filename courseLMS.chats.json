@@ -1,0 +1,281 @@
+[{
+  "_id": {
+    "$oid": "67d6c8b939aa6b391cf23bc5"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "supportType": "admin",
+  "status": "success",
+  "messages": [
+    {
+      "role": "model",
+      "text": "Tôi có thể giúp gì cho bạn? Hãy chọn loại hỗ trợ bạn muốn nhận.",
+      "timestamp": {
+        "$date": "2025-03-16T12:48:57.554Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Bạn đã chuyển sang hỗ trợ từ Chatbot. Tôi có thể giúp gì cho bạn?",
+      "timestamp": {
+        "$date": "2025-03-17T00:39:05.296Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Bạn đã chuyển sang hỗ trợ từ quản trị viên. Vui lòng đợi quản trị viên phản hồi.",
+      "timestamp": {
+        "$date": "2025-03-17T00:39:44.473Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Yêu cầu hỗ trợ đã được đánh dấu là hoàn thành thành công.",
+      "timestamp": {
+        "$date": "2025-03-17T00:39:48.582Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-16T12:48:57.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-17T00:39:48.582Z"
+  },
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "67d6c90239aa6b391cf23bd3"
+  },
+  "userId": {
+    "$oid": "67d6c8ff39aa6b391cf23bce"
+  },
+  "supportType": "chatbot",
+  "status": "pending",
+  "messages": [
+    {
+      "role": "model",
+      "text": "Tôi có thể giúp gì cho bạn? Hãy chọn loại hỗ trợ bạn muốn nhận.",
+      "timestamp": {
+        "$date": "2025-03-16T12:50:10.863Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-16T12:50:10.863Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T12:50:10.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6ecf7f437305f9bf94c42"
+  },
+  "userId": {
+    "$oid": "67d6eceff437305f9bf94c3d"
+  },
+  "supportType": "admin",
+  "status": "success",
+  "messages": [
+    {
+      "role": "model",
+      "text": "Tôi có thể giúp gì cho bạn? Hãy chọn loại hỗ trợ bạn muốn nhận.",
+      "timestamp": {
+        "$date": "2025-03-16T15:23:35.079Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Bạn đã chuyển sang hỗ trợ từ quản trị viên. Vui lòng đợi quản trị viên phản hồi.",
+      "timestamp": {
+        "$date": "2025-03-16T17:16:10.000Z"
+      }
+    },
+    {
+      "role": "user",
+      "text": "helo anh",
+      "timestamp": {
+        "$date": "2025-03-16T17:16:17.594Z"
+      }
+    },
+    {
+      "role": "user",
+      "text": "Anh bn tuổi",
+      "timestamp": {
+        "$date": "2025-03-16T17:16:35.525Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Yêu cầu hỗ trợ đã được đánh dấu là hoàn thành thành công.",
+      "timestamp": {
+        "$date": "2025-03-16T17:16:55.118Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-16T15:23:35.081Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:16:55.118Z"
+  },
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "67d70798f437305f9bf953de"
+  },
+  "userId": {
+    "$oid": "67d6eceff437305f9bf94c3d"
+  },
+  "supportType": "admin",
+  "status": "success",
+  "messages": [
+    {
+      "role": "model",
+      "text": "Tôi có thể giúp gì cho bạn? Hãy chọn loại hỗ trợ bạn muốn nhận.",
+      "timestamp": {
+        "$date": "2025-03-16T17:17:12.065Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Bạn đã chuyển sang hỗ trợ từ quản trị viên. Vui lòng đợi quản trị viên phản hồi.",
+      "timestamp": {
+        "$date": "2025-03-16T17:17:15.844Z"
+      }
+    },
+    {
+      "role": "user",
+      "text": "hi",
+      "timestamp": {
+        "$date": "2025-03-16T17:17:22.177Z"
+      }
+    },
+    {
+      "role": "user",
+      "text": "how are you",
+      "timestamp": {
+        "$date": "2025-03-16T17:17:40.023Z"
+      }
+    },
+    {
+      "role": "user",
+      "text": "?",
+      "timestamp": {
+        "$date": "2025-03-16T17:17:44.944Z"
+      }
+    },
+    {
+      "role": "admin",
+      "text": "cme",
+      "timestamp": {
+        "$date": "2025-03-16T17:18:15.125Z"
+      }
+    },
+    {
+      "role": "admin",
+      "text": "khoe lam em",
+      "timestamp": {
+        "$date": "2025-03-16T17:18:26.068Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Yêu cầu hỗ trợ đã được đánh dấu là hoàn thành thành công.",
+      "timestamp": {
+        "$date": "2025-03-16T17:19:17.565Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-16T17:17:12.066Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:19:17.566Z"
+  },
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "67d76f54ba61d956ee6ada2d"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "supportType": "admin",
+  "status": "success",
+  "messages": [
+    {
+      "role": "model",
+      "text": "Tôi có thể giúp gì cho bạn? Hãy chọn loại hỗ trợ bạn muốn nhận.",
+      "timestamp": {
+        "$date": "2025-03-17T00:39:48.589Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Bạn đã chuyển sang hỗ trợ từ quản trị viên. Vui lòng đợi quản trị viên phản hồi.",
+      "timestamp": {
+        "$date": "2025-03-17T00:39:50.807Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Yêu cầu hỗ trợ đã được đánh dấu là hoàn thành thành công.",
+      "timestamp": {
+        "$date": "2025-03-17T00:40:13.554Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-17T00:39:48.590Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-17T00:40:13.554Z"
+  },
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67d76f6dba61d956ee6ada34"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "supportType": "instructor",
+  "status": "pending",
+  "messages": [
+    {
+      "role": "model",
+      "text": "Tôi có thể giúp gì cho bạn? Hãy chọn loại hỗ trợ bạn muốn nhận.",
+      "timestamp": {
+        "$date": "2025-03-17T00:40:13.561Z"
+      }
+    },
+    {
+      "role": "model",
+      "text": "Bạn đã chuyển sang hỗ trợ từ giảng viên Đức của khóa học \"30 Days of Code: The Complete Python Bootcamp (Vietnamese)\". Vui lòng đợi giảng viên phản hồi.",
+      "timestamp": {
+        "$date": "2025-03-17T00:40:20.462Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-17T00:40:13.562Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-17T00:40:20.463Z"
+  },
+  "__v": 1,
+  "courseId": {
+    "$oid": "67d6cf0539bf1dbb25984378"
+  },
+  "instructorId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  }
+}]

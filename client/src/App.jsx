@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import HeroSection from "./pages/student/HeroSection";
@@ -16,7 +20,7 @@ import EditLecture from "./pages/instructor/lecture/EditLecture";
 import CourseDetail from "./pages/student/CourseDetail";
 import CourseProgress from "./pages/student/CourseProgress";
 import SearchPage from "./pages/student/SearchPage";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import {
   InstructorRoute,
   AuthenticatedUser,
@@ -28,6 +32,37 @@ import LearningUI from "./pages/home";
 import Footer from "./pages/footer";
 import PromoSection from "./pages/student/slide";
 import VoucherManagement from "./pages/instructor/voucher/VoucherManagement";
+import Chat from "./components/Chat/Chat";
+import SupportChatDetail from "./pages/instructor/support/SupportChatDetail";
+// Admin imports
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import UserManagement from "./pages/admin/UserManagement";
+import InstructorRequests from "./pages/admin/InstructorRequests";
+import CommentManagement from "./pages/admin/CommentManagement";
+import { useSelector } from "react-redux";
+import BannedWordManagement from "./pages/admin/BannedWordManagement";
+import ChatManagement from "./pages/admin/ChatManagement";
+import ManageSupport from "./pages/instructor/support/ManageSupport";
+
+// Admin Route Component
+const AdminRoute = ({ children }) => {
+  return (
+    <ProtectedRoute>
+      <AdminOnlyRoute>{children}</AdminOnlyRoute>
+    </ProtectedRoute>
+  );
+};
+
+// Admin Only Route Component
+const AdminOnlyRoute = ({ children }) => {
+  const { user } = useSelector((state) => state.auth);
+
+  if (user?.role !== "admin") {
+    return <Navigate to="/" />;
+  }
+
+  return children;
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -42,6 +77,7 @@ const appRouter = createBrowserRouter([
             {/* <HeroSection /> */}
             <Courses />
             <LearningUI />
+            <Chat />
             <Footer />
           </>
         ),
@@ -59,6 +95,7 @@ const appRouter = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <MyLearning />
+            <Chat />
             <Footer />
           </ProtectedRoute>
         ),
@@ -68,6 +105,7 @@ const appRouter = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Profile />
+            <Chat />
             <Footer />
           </ProtectedRoute>
         ),
@@ -77,6 +115,7 @@ const appRouter = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <SearchPage />
+            <Chat />
             <Footer />
           </ProtectedRoute>
         ),
@@ -86,6 +125,7 @@ const appRouter = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <CourseDetail />
+            <Chat />
             <Footer />
           </ProtectedRoute>
         ),
@@ -95,7 +135,8 @@ const appRouter = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <PurchaseCourseProtectedRoute>
-              <CourseProgress />
+            <Chat />
+            <CourseProgress />
             </PurchaseCourseProtectedRoute>
           </ProtectedRoute>
         ),
@@ -106,6 +147,7 @@ const appRouter = createBrowserRouter([
         element: (
           <InstructorRoute>
             <Sidebar />
+            <Chat />
           </InstructorRoute>
         ),
         children: [
@@ -137,7 +179,70 @@ const appRouter = createBrowserRouter([
             path: "vouchers",
             element: <VoucherManagement />,
           },
+          {
+            path: "support",
+            element: <ManageSupport />,
+          },
+          {
+            path: "support/chat/:chatId",
+            element: <SupportChatDetail />,
+          },
         ],
+      },
+      // Admin Routes
+      {
+        path: "admin",
+        element: (
+          <AdminRoute>
+            <Chat />
+            <AdminDashboard />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/users",
+        element: (
+          <AdminRoute>
+            <Chat />
+            <UserManagement />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/instructor-requests",
+        element: (
+          <AdminRoute>
+            <Chat />
+            <InstructorRequests />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/comments",
+        element: (
+          <AdminRoute>
+            <Chat />
+            <CommentManagement />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/chats",
+        element: (
+          <AdminRoute>
+            <Chat />
+            <ChatManagement />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin/banned-words",
+        element: (
+          <AdminRoute>
+            <Chat />
+            <BannedWordManagement />
+          </AdminRoute>
+        ),
       },
     ],
   },

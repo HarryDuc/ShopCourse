@@ -33,16 +33,21 @@ const Navbar = () => {
   const [logoutUser, { data, isSuccess }] = useLogoutUserMutation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const logoutHandler = async () => {
-    await logoutUser();
+    try {
+      const response = await logoutUser().unwrap();
+      toast.success(response?.message || "Đăng xuất thành công.");
+      setTimeout(() => {
+        navigate("/login", { replace: true });
+        window.location.reload();
+      }, 1000);
+    } catch (error) {
+      console.error("Lỗi khi đăng xuất:", error);
+      toast.error("Có lỗi xảy ra khi đăng xuất");
+    }
   };
 
-  useEffect(() => {
-    if (isSuccess) {
-      toast.success(data?.message || "Đăng xuất thành công.");
-      navigate("/login");
-    }
-  }, [isSuccess]);
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "auto";
@@ -99,7 +104,15 @@ const Navbar = () => {
                   <>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
-                      <Link to="/instructor/dashboard">Thêm khóa học</Link>
+                      <Link to="/instructor/dashboard">Quản lý khóa học</Link>
+                    </DropdownMenuItem>
+                  </>
+                )}
+                {user?.role === "admin" && (
+                  <>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <Link to="/admin">Quản trị hệ thống</Link>
                     </DropdownMenuItem>
                   </>
                 )}
@@ -109,11 +122,25 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
-                onClick={() => navigate("/login#login")}
+                onClick={() => {
+                  navigate("/login", { replace: true });
+                  setTimeout(() => {
+                    window.location.hash = "login";
+                  }, 100);
+                }}
               >
                 Đăng nhập
               </Button>
-              <Button onClick={() => navigate("/login#signup")}>Đăng ký</Button>
+              <Button
+                onClick={() => {
+                  navigate("/login", { replace: true });
+                  setTimeout(() => {
+                    window.location.hash = "signup";
+                  }, 100);
+                }}
+              >
+                Đăng ký
+              </Button>
             </div>
           )}
           <DarkMode />
@@ -121,7 +148,7 @@ const Navbar = () => {
       </div>
       {/* Mobile device  */}
       <div className="flex md:hidden items-center justify-between px-4 h-full">
-        <h1 className="font-extrabold text-2xl">E-learning</h1>
+        <Link to="/"><h1 className="font-extrabold text-2xl">E-learning</h1></Link>
         <MobileNavbar user={user} />
       </div>
     </div>
@@ -131,13 +158,28 @@ const Navbar = () => {
 export default Navbar;
 
 const MobileNavbar = ({ user }) => {
+  const [logoutUser, { data, isSuccess }] = useLogoutUserMutation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const logoutHandler = async () => {
+    try {
+      const response = await logoutUser().unwrap();
+      toast.success(response?.message || "Đăng xuất thành công.");
+      setTimeout(() => {
+        navigate("/login", { replace: true });
+        window.location.reload();
+      }, 1000);
+    } catch (error) {
+      console.error("Lỗi khi đăng xuất:", error);
+      toast.error("Có lỗi xảy ra khi đăng xuất");
+    }
+  };
 
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "auto";
-      document.body.removeAttribute("data-scroll-locked"); // Xóa thuộc tính chặn cuộn
+      document.body.removeAttribute("data-scroll-locked");
     }
   }, [isMenuOpen]);
   return (
@@ -153,32 +195,82 @@ const MobileNavbar = ({ user }) => {
       </SheetTrigger>
       <SheetContent
         className="flex flex-col"
-        onOpenAutoFocus={(e) => e.preventDefault()} // Ngăn chặn body bị khóa
+        onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <SheetHeader className="flex flex-row items-center justify-between mt-2">
           <SheetTitle>
-            {" "}
             <Link to="/">E-Learning</Link>
           </SheetTitle>
           <DarkMode />
         </SheetHeader>
         <Separator className="mr-2" />
-        <nav className="flex flex-col space-y-4">
-          <Link to="/my-learning">Khóa học đã mua</Link>
-          <Link to="/profile">Chỉnh sửa hồ sơ</Link>
-          <p>Log out</p>
-        </nav>
-        {user?.role === "instructor" && (
-          <SheetFooter>
+
+        {user ? (
+          <>
+            <nav className="flex flex-col space-y-4 mt-4">
+              <Link to="/my-learning">Khóa học đã mua</Link>
+              <Link to="/profile">Chỉnh sửa hồ sơ</Link>
+              <button
+                className="text-left text-red-500 hover:text-red-700"
+                onClick={logoutHandler}
+              >
+                Đăng xuất
+              </button>
+            </nav>
+
+            {user?.role === "instructor" && (
+              <SheetFooter className="mt-6">
+                <SheetClose asChild>
+                  <Button
+                    type="submit"
+                    onClick={() => navigate("/instructor/dashboard")}
+                  >
+                    Quản lý khóa học
+                  </Button>
+                </SheetClose>
+              </SheetFooter>
+            )}
+            {user?.role === "admin" && (
+              <SheetFooter className="mt-6">
+                <SheetClose asChild>
+                  <Button
+                    type="submit"
+                    onClick={() => navigate("/admin")}
+                  >
+                    Quản trị hệ thống
+                  </Button>
+                </SheetClose>
+              </SheetFooter>
+            )}
+          </>
+        ) : (
+          <div className="flex flex-col gap-3 mt-6">
             <SheetClose asChild>
               <Button
-                type="submit"
-                onClick={() => navigate("/instructor/dashboard")}
+                variant="outline"
+                onClick={() => {
+                  navigate("/login", { replace: true });
+                  setTimeout(() => {
+                    window.location.hash = "login";
+                  }, 100);
+                }}
               >
-                Thêm khóa học
+                Đăng nhập
               </Button>
             </SheetClose>
-          </SheetFooter>
+            <SheetClose asChild>
+              <Button
+                onClick={() => {
+                  navigate("/login", { replace: true });
+                  setTimeout(() => {
+                    window.location.hash = "signup";
+                  }, 100);
+                }}
+              >
+                Đăng ký
+              </Button>
+            </SheetClose>
+          </div>
         )}
       </SheetContent>
     </Sheet>

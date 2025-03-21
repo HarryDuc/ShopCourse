@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
-import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
+import { FaReply, FaEdit, FaTrash, FaClock, FaCheck, FaTimes } from "react-icons/fa";
 import axiosInstance from "../config/axios";
 
 const Comment = ({ courseId, purchased }) => {
@@ -10,19 +10,19 @@ const Comment = ({ courseId, purchased }) => {
   const [replyTo, setReplyTo] = useState(null);
   const [editingComment, setEditingComment] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showPending, setShowPending] = useState(false);
   const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     fetchComments();
-  }, [courseId]);
+  }, [courseId, showPending]);
 
   const fetchComments = async () => {
     try {
       setIsLoading(true);
       const response = await axiosInstance.get(
-        `/api/v1/comments/course/${courseId}`
+        `/api/v1/comments/course/${courseId}${showPending ? '?showPending=true' : ''}`
       );
-      console.log("Comments data:", response.data.data);
       setComments(response.data.data || []);
     } catch (error) {
       toast.error("Không thể tải bình luận");
@@ -39,6 +39,7 @@ const Comment = ({ courseId, purchased }) => {
         content: newComment,
         courseId,
         parentId: replyTo,
+        autoModerate: true, // Tự động duyệt nếu không có từ cấm
       });
 
       if (replyTo) {
@@ -102,10 +103,57 @@ const Comment = ({ courseId, purchased }) => {
     }
   };
 
+  const handleModerate = async (commentId, status) => {
+    try {
+      const response = await axiosInstance.put(
+        `/api/v1/comments/${commentId}/moderate`,
+        { status }
+      );
+
+      const updatedComments = comments.map((comment) => {
+        if (comment._id === commentId) {
+          return response.data.data;
+        }
+        return comment;
+      });
+
+      setComments(updatedComments);
+      toast.success(`Đã ${status === 'approved' ? 'duyệt' : 'từ chối'} bình luận`);
+    } catch (error) {
+      toast.error("Không thể duyệt bình luận");
+    }
+  };
+
   const CommentItem = ({ comment, isReply }) => {
     const [editContent, setEditContent] = useState(comment.content);
     const isEditing = editingComment === comment._id;
     const canModifyComment = user && user._id === comment.userId?._id;
+    const isAdmin = user?.role === 'admin';
+
+    const getStatusBadge = () => {
+      switch (comment.status) {
+        case 'pending':
+          return (
+            <span className="inline-flex items-center px-2 py-1 text-xs font-medium rounded bg-yellow-100 text-yellow-800">
+              <FaClock className="mr-1" /> Chờ duyệt
+            </span>
+          );
+        case 'approved':
+          return (
+            <span className="inline-flex items-center px-2 py-1 text-xs font-medium rounded bg-green-100 text-green-800">
+              <FaCheck className="mr-1" /> Đã duyệt
+            </span>
+          );
+        case 'rejected':
+          return (
+            <span className="inline-flex items-center px-2 py-1 text-xs font-medium rounded bg-red-100 text-red-800">
+              <FaTimes className="mr-1" /> Đã từ chối
+            </span>
+          );
+        default:
+          return null;
+      }
+    };
 
     return (
       <div
@@ -115,18 +163,21 @@ const Comment = ({ courseId, purchased }) => {
       >
         <div className="flex items-start space-x-4">
           <img
-            src={user?.photoUrl || "https://github.com/shadcn.png"}
+            src={comment.userId?.photoUrl || "https://github.com/shadcn.png"}
             alt="avatar"
             className="w-10 h-10 rounded-full"
           />
           <div className="flex-1">
             <div className="flex items-center justify-between">
-              <h4 className="font-semibold">
-                {comment.userId?.name}
-                <span className="ml-2 text-sm text-gray-500">
-                  {comment.userId?.role}
-                </span>
-              </h4>
+              <div>
+                <h4 className="font-semibold">
+                  {comment.userId?.name}
+                  <span className="ml-2 text-sm text-gray-500">
+                    {comment.userId?.role}
+                  </span>
+                </h4>
+                {getStatusBadge()}
+              </div>
               <span className="text-sm text-gray-500">
                 {new Date(comment.createdAt).toLocaleDateString()}
               </span>
@@ -165,7 +216,7 @@ const Comment = ({ courseId, purchased }) => {
               <>
                 <p className="mt-1 text-gray-700">{comment.content}</p>
                 <div className="flex items-center space-x-4 mt-2">
-                  {!isReply && purchased && (
+                  {!isReply && purchased && comment.status === 'approved' && (
                     <button
                       onClick={() => setReplyTo(comment._id)}
                       className="flex items-center text-sm text-gray-500 hover:text-blue-500"
@@ -192,6 +243,22 @@ const Comment = ({ courseId, purchased }) => {
                       </button>
                     </>
                   )}
+                  {isAdmin && comment.status === 'pending' && (
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => handleModerate(comment._id, 'approved')}
+                        className="flex items-center text-sm text-white bg-green-500 px-2 py-1 rounded hover:bg-green-600"
+                      >
+                        <FaCheck className="mr-1" /> Duyệt
+                      </button>
+                      <button
+                        onClick={() => handleModerate(comment._id, 'rejected')}
+                        className="flex items-center text-sm text-white bg-red-500 px-2 py-1 rounded hover:bg-red-600"
+                      >
+                        <FaTimes className="mr-1" /> Từ chối
+                      </button>
+                    </div>
+                  )}
                 </div>
               </>
             )}
@@ -208,7 +275,21 @@ const Comment = ({ courseId, purchased }) => {
 
   return (
     <div className="mt-8">
-      <h3 className="text-xl font-semibold mb-4">Bình luận</h3>
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-xl font-semibold">Bình luận</h3>
+        {user?.role === 'admin' && (
+          <button
+            onClick={() => setShowPending(!showPending)}
+            className={`px-4 py-2 rounded ${
+              showPending
+                ? 'bg-yellow-500 hover:bg-yellow-600'
+                : 'bg-gray-500 hover:bg-gray-600'
+            } text-white`}
+          >
+            {showPending ? 'Xem tất cả' : 'Xem bình luận chờ duyệt'}
+          </button>
+        )}
+      </div>
 
       {user ? (
         purchased ? (
@@ -241,7 +322,7 @@ const Comment = ({ courseId, purchased }) => {
             </button>
           </form>
         ) : (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6 ">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
             <p className="text-yellow-700">
               Bạn cần mua khóa học này để có thể bình luận.
             </p>

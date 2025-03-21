@@ -19,6 +19,7 @@ import {
   useUpdateUserMutation,
 } from "@/features/api/authApi";
 import { toast } from "sonner";
+import RequestInstructor from "../../components/student/RequestInstructor";
 
 const Profile = () => {
   const [name, setName] = useState("");
@@ -39,8 +40,6 @@ const Profile = () => {
       isSuccess,
     },
   ] = useUpdateUserMutation();
-
-  console.log(data);
 
   const onChangeHandler = (e) => {
     const file = e.target.files?.[0];
@@ -167,6 +166,9 @@ const Profile = () => {
           </Dialog>
         </div>
       </div>
+
+      {data?.user?.role === "student" && <RequestInstructor />}
+
       <div>
         <h1 className="font-medium text-lg">Các khóa học bạn đã đăng ký</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 my-5">

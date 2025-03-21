@@ -4,6 +4,7 @@ import { CoursePurchase } from "../models/coursePurchase.model.js";
 import { Lecture } from "../models/lecture.model.js";
 import { User } from "../models/user.model.js";
 import { CourseProgress } from "../models/courseProgress.js";
+import { Voucher } from "../models/voucher.model.js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -12,11 +13,58 @@ export const createCheckoutSession = async (req, res) => {
     const userId = req.id;
     const { courseId, discountedPrice, voucherCode } = req.body;
 
+    // Kiểm tra khóa học tồn tại
     const course = await Course.findById(courseId);
-    if (!course) return res.status(404).json({ message: "Course not found!" });
+    if (!course) {
+      return res.status(404).json({
+        success: false,
+        message: "Không tìm thấy khóa học",
+      });
+    }
 
-    // Determine the final price (original or discounted)
-    const finalPrice = discountedPrice || course.coursePrice;
+    // Kiểm tra và validate voucher nếu có
+    let finalPrice = course.coursePrice;
+    if (voucherCode) {
+      const voucher = await Voucher.findOne({
+        code: voucherCode.toUpperCase(),
+        isActive: true,
+        startDate: { $lte: new Date() },
+        endDate: { $gte: new Date() },
+        courses: courseId,
+      });
+
+      if (!voucher) {
+        return res.status(400).json({
+          success: false,
+          message: "Mã giảm giá không hợp lệ hoặc đã hết hạn",
+        });
+      }
+
+      // Kiểm tra số lần sử dụng
+      if (voucher.currentUses >= voucher.maxUses) {
+        return res.status(400).json({
+          success: false,
+          message: "Mã giảm giá đã hết lượt sử dụng",
+        });
+      }
+
+      // Kiểm tra xem người dùng đã sử dụng voucher này chưa
+      const existingPurchase = await CoursePurchase.findOne({
+        userId,
+        courseId,
+        voucherCode: voucherCode.toUpperCase(),
+        status: { $in: ["pending", "completed"] },
+      });
+
+      if (existingPurchase) {
+        return res.status(400).json({
+          success: false,
+          message: "Bạn đã sử dụng mã giảm giá này cho khóa học này",
+        });
+      }
+
+      finalPrice = discountedPrice;
+    }
 
     // Create a Stripe checkout session
     const session = await stripe.checkout.sessions.create({
@@ -50,32 +98,29 @@ export const createCheckoutSession = async (req, res) => {
     if (!session.url) {
       return res.status(400).json({
         success: false,
-        message: "Error while creating session",
+        message: "Lỗi khi tạo phiên thanh toán",
       });
     }
 
-    // Create a new course purchase record with paymentId
+    // Create a new course purchase record
     const newPurchase = new CoursePurchase({
       courseId,
       userId,
       amount: finalPrice,
       status: "pending",
       paymentId: session.id,
-      voucherCode: voucherCode || null,
+      voucherCode: voucherCode ? voucherCode.toUpperCase() : null,
     });
+
+    await newPurchase.save();
 
     // Cập nhật metadata với purchaseId
     await stripe.checkout.sessions.update(session.id, {
       metadata: {
-        courseId: courseId,
-        userId: userId,
+        ...session.metadata,
         purchaseId: newPurchase._id.toString(),
       },
     });
-
-    // Save the purchase record
-    await newPurchase.save();
-    console.log("Created purchase record:", newPurchase);
 
     return res.status(200).json({
       success: true,
@@ -85,7 +130,7 @@ export const createCheckoutSession = async (req, res) => {
     console.error("Error creating checkout session:", error);
     return res.status(500).json({
       success: false,
-      message: "Failed to create checkout session",
+      message: "Lỗi khi xử lý thanh toán",
     });
   }
 };
@@ -143,6 +188,26 @@ const handleSuccessfulPayment = async (session) => {
     throw new Error(`Purchase not found: ${purchaseId}`);
   }
   console.log("Updated purchase:", purchase);
+
+  // Update voucher usage if voucher was used
+  if (purchase.voucherCode) {
+    // Kiểm tra xem purchase đã được cập nhật voucher chưa
+    if (!purchase.voucherUpdated) {
+      const voucher = await Voucher.findOneAndUpdate(
+        { code: purchase.voucherCode },
+        { $inc: { currentUses: 1 } },
+        { new: true }
+      );
+      console.log("Updated voucher usage:", voucher);
+
+      // Đánh dấu là đã cập nhật voucher
+      await CoursePurchase.findByIdAndUpdate(
+        purchaseId,
+        { voucherUpdated: true },
+        { new: true }
+      );
+    }
+  }
 
   // 2. Update user's enrolledCourses
   const updatedUser = await User.findByIdAndUpdate(
@@ -297,7 +362,6 @@ export const getCourseDetailWithPurchaseStatus = async (req, res) => {
       courseId,
       status: "completed",
     });
-    console.log(purchased);
 
     if (!course) {
       return res.status(404).json({ message: "course not found!" });
@@ -332,7 +396,6 @@ export const getAllPurchasedCourse = async (req, res) => {
       ],
     });
 
-    console.log("Found purchased courses:", purchasedCourses);
 
     if (!purchasedCourses || purchasedCourses.length === 0) {
       return res.status(200).json({

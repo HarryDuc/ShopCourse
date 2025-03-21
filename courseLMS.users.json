@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "name": "Đức",
+  "email": "vuminhduc.contact@gmail.com",
+  "password": "$2a$10$rEE/sA2sSHxLYnzRNS6ijeck3sySr5rwah5o9t6hpikIIjjcThTQC",
+  "role": "instructor",
+  "instructorRequest": "none",
+  "enrolledCourses": [
+    {
+      "$oid": "67d6cf0539bf1dbb25984378"
+    },
+    {
+      "$oid": "67d70072f437305f9bf94e8f"
+    },
+    {
+      "$oid": "67d7028bf437305f9bf94ed9"
+    }
+  ],
+  "photoUrl": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742135935/c1zhsmms4snfp5rqknfs.gif",
+  "createdAt": {
+    "$date": "2025-03-16T12:48:55.373Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:02.088Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6c8ff39aa6b391cf23bce"
+  },
+  "name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "$2a$10$L4Pc31NlmXmN6zLCc29z.eztoUix/ZTLw5nc5V2pqzXgSOQ.VDVc6",
+  "role": "admin",
+  "instructorRequest": "none",
+  "enrolledCourses": [],
+  "photoUrl": "https://github.com/shadcn.png",
+  "createdAt": {
+    "$date": "2025-03-16T12:50:07.135Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T12:50:07.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6eceff437305f9bf94c3d"
+  },
+  "name": "Harry Duc",
+  "email": "vuminhduc@gmail.com",
+  "password": "$2a$10$uEjp2r98JXJZFaUV2wtDH.kKfdBRY0nGHNU2h6q/AbF3j3JpgiP6G",
+  "role": "student",
+  "instructorRequest": "pending",
+  "enrolledCourses": [],
+  "photoUrl": "https://github.com/shadcn.png",
+  "createdAt": {
+    "$date": "2025-03-16T15:23:27.934Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:19:02.636Z"
+  },
+  "__v": 0
+}]

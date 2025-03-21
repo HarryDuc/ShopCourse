@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "67d704daf437305f9bf9504e"
+  },
+  "word": "dm",
+  "category": "profanity",
+  "description": "",
+  "createdAt": {
+    "$date": "2025-03-16T17:05:30.847Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:05:30.847Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d704ecf437305f9bf95052"
+  },
+  "word": "ez",
+  "category": "spam",
+  "description": "",
+  "createdAt": {
+    "$date": "2025-03-16T17:05:48.967Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:05:48.967Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d704f9f437305f9bf95056"
+  },
+  "word": "noob",
+  "category": "hate_speech",
+  "description": "",
+  "createdAt": {
+    "$date": "2025-03-16T17:06:01.508Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:06:01.508Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70500f437305f9bf9505a"
+  },
+  "word": "gà",
+  "category": "hate_speech",
+  "description": "",
+  "createdAt": {
+    "$date": "2025-03-16T17:06:08.018Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:06:08.018Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70509f437305f9bf9505e"
+  },
+  "word": "non",
+  "category": "spam",
+  "description": "",
+  "createdAt": {
+    "$date": "2025-03-16T17:06:17.785Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:06:17.785Z"
+  },
+  "__v": 0
+}]

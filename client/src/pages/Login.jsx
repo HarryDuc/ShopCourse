@@ -74,23 +74,24 @@ const Login = () => {
   };
 
   useEffect(() => {
-    console.log("registerError:", registerError);
-    console.log("loginError:", loginError);
     if (registerIsSuccess && registerData) {
-      toast.success(registerData.message || "Đăng ký thành công.")
+      toast.success(registerData.message || "Đăng ký thành công.");
     }
     // if (registerError) {
     //   toast.error(registerError.data.message || "Signup Failed");
     // }
     if (registerError) {
-      const errorMessage = registerError?.data?.message || registerError?.error || "Đăng ký thất bại";
+      const errorMessage =
+        registerError?.data?.message ||
+        registerError?.error ||
+        "Đăng ký thất bại";
       toast.error(errorMessage);
     }
     if (loginIsSuccess && loginData) {
       toast.success(loginData.message || "Đăng nhập thành công.");
       navigate("/", {
         replace: true,
-        state: { reload: true }
+        state: { reload: true },
       });
       window.location.reload();
     }
@@ -98,7 +99,8 @@ const Login = () => {
     //   toast.error(loginError.data.message || "login Failed");
     // }
     if (loginError) {
-      const errorMessage = loginError?.data?.message || loginError?.error || "Đăng nhập thất bại";
+      const errorMessage =
+        loginError?.data?.message || loginError?.error || "Đăng nhập thất bại";
       toast.error(errorMessage);
     }
   }, [
@@ -114,10 +116,18 @@ const Login = () => {
     <div className="flex items-center w-full justify-center mt-20">
       <Tabs defaultValue={activeTab} value={activeTab} className="w-[400px]">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="signup" id="signup" onClick={() => setActiveTab("signup")}>
+          <TabsTrigger
+            value="signup"
+            id="signup"
+            onClick={() => setActiveTab("signup")}
+          >
             Đăng ký
           </TabsTrigger>
-          <TabsTrigger value="login" id="login" onClick={() => setActiveTab("login")}>
+          <TabsTrigger
+            value="login"
+            id="login"
+            onClick={() => setActiveTab("login")}
+          >
             Đăng nhập
           </TabsTrigger>
         </TabsList>
@@ -171,7 +181,8 @@ const Login = () => {
               >
                 {registerIsLoading ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Vui lòng chờ
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Vui lòng
+                    chờ
                   </>
                 ) : (
                   "Đăng ký"
@@ -185,7 +196,8 @@ const Login = () => {
             <CardHeader>
               <CardTitle>Đăng nhập</CardTitle>
               <CardDescription>
-                Đăng nhập mật khẩu của bạn ở đây. Sau khi đăng ký, bạn sẽ được đăng nhập.
+                Đăng nhập mật khẩu của bạn ở đây. Sau khi đăng ký, bạn sẽ được
+                đăng nhập.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -219,7 +231,8 @@ const Login = () => {
               >
                 {loginIsLoading ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Vui lòng chờ
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Vui lòng
+                    chờ
                   </>
                 ) : (
                   "Đăng nhập"

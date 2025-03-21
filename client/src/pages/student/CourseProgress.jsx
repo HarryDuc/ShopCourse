@@ -32,24 +32,31 @@ const CourseProgress = () => {
   ] = useInCompleteCourseMutation();
 
   useEffect(() => {
-    if (completedSuccess) {
-      refetch();
-      refetchUser();
-      toast.success(markCompleteData.message);
-    }
-    if (inCompletedSuccess) {
-      refetch();
-      refetchUser();
-      toast.success(markInCompleteData.message);
-    }
-  }, [completedSuccess, inCompletedSuccess]);
+    const handleSuccess = async () => {
+      if (completedSuccess && markCompleteData) {
+        await refetch();
+        await refetchUser();
+        toast.success(markCompleteData.message);
+      }
+      if (inCompletedSuccess && markInCompleteData) {
+        await refetch();
+        await refetchUser();
+        toast.success(markInCompleteData.message);
+      }
+    };
+    handleSuccess();
+  }, [
+    completedSuccess,
+    inCompletedSuccess,
+    markCompleteData,
+    markInCompleteData,
+  ]);
 
   const [currentLecture, setCurrentLecture] = useState(null);
 
   if (isLoading) return <p>Đang tải...</p>;
   if (isError) return <p>Không tải được chi tiết khóa học</p>;
 
-  console.log(data);
 
   const { courseDetails, progress, completed } = data.data;
   const { courseTitle } = courseDetails;

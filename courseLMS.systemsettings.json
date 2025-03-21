@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "67d706eb7c6fd68dd75fbb75"
+  },
+  "key": "autoApproveEnabled",
+  "__v": 0,
+  "updatedAt": {
+    "$date": "2025-03-16T17:14:19.905Z"
+  },
+  "value": true
+}]

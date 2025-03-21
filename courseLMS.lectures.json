@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "67d6cf3939bf1dbb25984380"
+  },
+  "lectureTitle": "Cài đặt môi trường Python",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742133130/mi05mgsedw4jh0rwjh3t.mp4",
+  "publicId": "mi05mgsedw4jh0rwjh3t",
+  "createdAt": {
+    "$date": "2025-03-16T13:16:41.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T13:52:14.367Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6f1ecf437305f9bf94cb0"
+  },
+  "lectureTitle": "Thiết lập và chạy Qwen 2.5 trên máy cục bộ bằng Ollama",
+  "createdAt": {
+    "$date": "2025-03-16T15:44:44.935Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T15:56:02.522Z"
+  },
+  "__v": 0,
+  "publicId": "fkinbnbo8sfetp6ld3ka",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742140558/fkinbnbo8sfetp6ld3ka.mp4"
+},
+{
+  "_id": {
+    "$oid": "67d6f733f437305f9bf94d5e"
+  },
+  "lectureTitle": "Tạo project base với Spring Boot",
+  "createdAt": {
+    "$date": "2025-03-16T16:07:15.965Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:08:58.979Z"
+  },
+  "__v": 0,
+  "publicId": "xh0ndrhdedvektaamozx",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742141334/xh0ndrhdedvektaamozx.mp4"
+},
+{
+  "_id": {
+    "$oid": "67d6fa33f437305f9bf94db4"
+  },
+  "lectureTitle": "Câu lệnh điều kiện JavaScript",
+  "createdAt": {
+    "$date": "2025-03-16T16:20:03.410Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:23:06.977Z"
+  },
+  "__v": 0,
+  "publicId": "om20x0jzalxw53zh7u4t",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742142133/om20x0jzalxw53zh7u4t.mp4"
+},
+{
+  "_id": {
+    "$oid": "67d6fc95f437305f9bf94dff"
+  },
+  "lectureTitle": "Khám phá các tiện ích HTML phổ biến nhất",
+  "createdAt": {
+    "$date": "2025-03-16T16:30:13.800Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:30:46.615Z"
+  },
+  "__v": 0,
+  "publicId": "hmqer3mmiw2vuyula3gr",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742142642/hmqer3mmiw2vuyula3gr.mp4"
+},
+{
+  "_id": {
+    "$oid": "67d6feb3f437305f9bf94e48"
+  },
+  "lectureTitle": "Next.js thông tin, thiết lập, trang chủ và thành phần liên kết",
+  "createdAt": {
+    "$date": "2025-03-16T16:39:15.063Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:40:13.344Z"
+  },
+  "__v": 0,
+  "publicId": "lznnel0gu741b8ryczzz",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742143203/lznnel0gu741b8ryczzz.mp4"
+},
+{
+  "_id": {
+    "$oid": "67d700c3f437305f9bf94ea6"
+  },
+  "lectureTitle": "Các loại data type (kiểu dữ liệu) thường dùng trong MS SQL SERVER",
+  "createdAt": {
+    "$date": "2025-03-16T16:48:03.540Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:48:32.326Z"
+  },
+  "__v": 0,
+  "publicId": "k7smg22n35px3mqejvlt",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742143708/k7smg22n35px3mqejvlt.mp4"
+},
+{
+  "_id": {
+    "$oid": "67d702e7f437305f9bf94ee2"
+  },
+  "lectureTitle": "Các thành phần và mẫu React",
+  "createdAt": {
+    "$date": "2025-03-16T16:57:11.440Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:57:46.064Z"
+  },
+  "__v": 0,
+  "publicId": "qfwmxldl9v9rtgijdiia",
+  "videoUrl": "http://res.cloudinary.com/dbgs7vcgh/video/upload/v1742144262/qfwmxldl9v9rtgijdiia.mp4"
+}]

@@ -10,7 +10,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { Switch } from "@/components/ui/switch";
-import { useEditLectureMutation, useGetLectureByIdQuery, useRemoveLectureMutation } from "@/features/api/courseApi";
+import {
+  useEditLectureMutation,
+  useGetLectureByIdQuery,
+  useRemoveLectureMutation,
+} from "@/features/api/courseApi";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
@@ -29,20 +33,23 @@ const LectureTab = () => {
   const params = useParams();
   const { courseId, lectureId } = params;
 
-  const {data:lectureData} = useGetLectureByIdQuery(lectureId);
+  const { data: lectureData } = useGetLectureByIdQuery(lectureId);
   const lecture = lectureData?.lecture;
 
-  useEffect(()=>{
-    if(lecture){
+  useEffect(() => {
+    if (lecture) {
       setLectureTitle(lecture.lectureTitle);
       setIsFree(lecture.isPreviewFree);
-      setUploadVideoInfo(lecture.videoInfo)
+      setUploadVideoInfo(lecture.videoInfo);
     }
-  },[lecture])
+  }, [lecture]);
 
   const [edtiLecture, { data, isLoading, error, isSuccess }] =
     useEditLectureMutation();
-    const [removeLecture,{data:removeData, isLoading:removeLoading, isSuccess:removeSuccess}] = useRemoveLectureMutation();
+  const [
+    removeLecture,
+    { data: removeData, isLoading: removeLoading, isSuccess: removeSuccess },
+  ] = useRemoveLectureMutation();
 
   const fileChangeHandler = async (e) => {
     const file = e.target.files[0];
@@ -68,7 +75,7 @@ const LectureTab = () => {
         }
       } catch (error) {
         console.log(error);
-        toast.error("Tải video thất bại");
+        toast.error("Thêm video thất bại");
       } finally {
         setMediaProgress(false);
       }
@@ -80,8 +87,8 @@ const LectureTab = () => {
 
     await edtiLecture({
       lectureTitle,
-      videoInfo:uploadVideInfo,
-      isPreviewFree:isFree,
+      videoInfo: uploadVideInfo,
+      isPreviewFree: isFree,
       courseId,
       lectureId,
     });
@@ -89,7 +96,7 @@ const LectureTab = () => {
 
   const removeLectureHandler = async () => {
     await removeLecture(lectureId);
-  }
+  };
 
   useEffect(() => {
     if (isSuccess) {
@@ -100,11 +107,11 @@ const LectureTab = () => {
     }
   }, [isSuccess, error]);
 
-  useEffect(()=>{
-    if(removeSuccess){
+  useEffect(() => {
+    if (removeSuccess) {
       toast.success(removeData.message);
     }
-  },[removeSuccess])
+  }, [removeSuccess]);
 
   return (
     <Card>
@@ -112,17 +119,23 @@ const LectureTab = () => {
         <div>
           <CardTitle>Chỉnh sửa bài giảng</CardTitle>
           <CardDescription>
-          Thực hiện các thay đổi và nhấp vào lưu khi hoàn tất.
+            Thay đổi và nhấn cập nhật để hoàn thành
           </CardDescription>
         </div>
         <div className="flex items-center gap-2">
-          <Button disbaled={removeLoading} variant="destructive" onClick={removeLectureHandler}>
-            {
-              removeLoading ? <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
-              Please wait
-              </> : "Xóa bài giảng"
-            }
+          <Button
+            disabled={removeLoading}
+            variant="destructive"
+            onClick={removeLectureHandler}
+          >
+            {removeLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Vui lòng chờ...
+              </>
+            ) : (
+              "Xóa bài giảng"
+            )}
           </Button>
         </div>
       </CardHeader>
@@ -133,7 +146,7 @@ const LectureTab = () => {
             value={lectureTitle}
             onChange={(e) => setLectureTitle(e.target.value)}
             type="text"
-            placeholder="Ex. Introduction to Javascript"
+            placeholder="Ví dụ. Giới thiệu về Javascirpt"
           />
         </div>
         <div className="my-5">
@@ -144,13 +157,17 @@ const LectureTab = () => {
             type="file"
             accept="video/*"
             onChange={fileChangeHandler}
-            placeholder="Ex. Introduction to Javascript"
+            placeholder="Ví dụ. Giới thiệu về Javascirpt"
             className="w-fit"
           />
         </div>
         <div className="flex items-center space-x-2 my-5">
-          <Switch checked={isFree} onCheckedChange={setIsFree} id="airplane-mode" />
-          <Label htmlFor="airplane-mode">Bài giảng miễn phí</Label>
+          <Switch
+            checked={isFree}
+            onCheckedChange={setIsFree}
+            id="airplane-mode"
+          />
+          <Label htmlFor="airplane-mode">Đây là video FREE</Label>
         </div>
 
         {mediaProgress && (
@@ -162,13 +179,14 @@ const LectureTab = () => {
 
         <div className="mt-4">
           <Button disabled={isLoading} onClick={editLectureHandler}>
-              {
-                isLoading ? <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
+            {isLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Vui lòng chờ
-                </> : "Cập nhật bài giảng"
-              }
-            
+              </>
+            ) : (
+              "Cập nhật bài giảng"
+            )}
           </Button>
         </div>
       </CardContent>

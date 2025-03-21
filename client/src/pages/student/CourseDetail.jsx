@@ -9,9 +9,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { useGetCourseDetailWithStatusQuery } from "@/features/api/purchaseApi";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useValidateVoucherMutation } from "@/features/api/voucherApi";
+import { cn } from "@/lib/utils";
+import { useGetCourseDetailWithStatusQuery } from "@/features/api/purchaseApi";
 import { useLoadUserQuery } from "@/features/api/authApi";
 import { BadgeInfo, Loader2, Lock, PlayCircle } from "lucide-react";
 import React, { useState, useEffect } from "react";
@@ -29,37 +32,36 @@ const CourseDetail = () => {
   const { data, isLoading, isError, refetch } =
     useGetCourseDetailWithStatusQuery(courseId);
   const { refetch: refetchUser } = useLoadUserQuery();
-  const [validateVoucher] = useValidateVoucherMutation();
   const [voucherCode, setVoucherCode] = useState("");
   const [discountedPrice, setDiscountedPrice] = useState(null);
   const [isValidating, setIsValidating] = useState(false);
+  const [validateVoucher] = useValidateVoucherMutation();
 
   useEffect(() => {
     const handlePaymentSuccess = async () => {
       try {
-        // Kiểm tra xem có phải redirect từ thanh toán thành công không
         const isFromPayment = location.search.includes("success=true");
-        if (isFromPayment) {
-          // Gọi API để cập nhật trạng thái thanh toán
-          const response = await axios.post(
-            `http://localhost:8080/api/v1/purchase/course/${courseId}/payment-success`,
-            {},
-            { withCredentials: true }
-          );
+        if (!isFromPayment) return;
 
-          if (response.data.success) {
-            toast.success("Thanh toán thành công!");
-            // Reload dữ liệu
-            await refetch();
-            await refetchUser();
-            // Remove the success=true parameter from URL to prevent repeated processing
-            const newUrl = window.location.pathname;
-            window.history.replaceState({}, document.title, newUrl);
-          } else {
-            toast.error(
-              response.data.message || "Có lỗi xảy ra khi xử lý thanh toán"
-            );
-          }
+        const response = await axios.post(
+          `http://localhost:8080/api/v1/purchase/course/${courseId}/payment-success`,
+          {},
+          { withCredentials: true }
+        );
+
+        if (response.data.success) {
+          toast.success("Thanh toán thành công!");
+          // Chỉ refetch khi cần thiết
+          const promises = [refetch(), refetchUser()];
+          await Promise.all(promises);
+
+          // Remove success parameter
+          const newUrl = window.location.pathname;
+          window.history.replaceState({}, document.title, newUrl);
+        } else {
+          toast.error(
+            response.data.message || "Có lỗi xảy ra khi xử lý thanh toán"
+          );
         }
       } catch (error) {
         console.error("Error handling payment success:", error);
@@ -70,20 +72,29 @@ const CourseDetail = () => {
     };
 
     handlePaymentSuccess();
-  }, [courseId, location.search, refetch, refetchUser]);
+  }, [location.search]); // Chỉ phụ thuộc vào location.search
 
   const handleVoucherValidation = async () => {
     if (!voucherCode) return;
     setIsValidating(true);
     try {
-      const response = await validateVoucher({
+      console.log("Validating voucher:", voucherCode, "for course:", courseId);
+      const result = await validateVoucher({
         code: voucherCode,
         courseId,
       }).unwrap();
-      setDiscountedPrice(response.data.discountedPrice);
-      toast.success("Voucher applied successfully!");
+
+      console.log("Voucher validation result:", result);
+      if (result.success) {
+        setDiscountedPrice(result.data.discountedPrice);
+        toast.success("Áp dụng mã giảm giá thành công");
+      } else {
+        toast.error(result.message || "Failed to validate voucher");
+        setDiscountedPrice(null);
+      }
     } catch (error) {
-      toast.error(error.data?.message || "Invalid voucher code");
+      console.error("Voucher validation error:", error);
+      toast.error(error.data?.message || "Failed to validate voucher");
       setDiscountedPrice(null);
     } finally {
       setIsValidating(false);
@@ -162,7 +173,7 @@ const CourseDetail = () => {
                   controls={true}
                 />
               </div>
-              <h1>Tiêu đề khóa học</h1>
+              <h1>{course.courseTitle}</h1>
               <Separator className="my-2" />
               <div className="space-y-2">
                 {!purchased && (
@@ -188,14 +199,14 @@ const CourseDetail = () => {
                     {discountedPrice !== null && (
                       <div className="text-sm">
                         <p className="text-gray-500 line-through">
-                          Original Price:{" "}
+                          Giá gốc:{" "}
                           {course.coursePrice.toLocaleString("vi-VN", {
                             style: "currency",
                             currency: "VND",
                           })}
                         </p>
                         <p className="text-green-600 font-semibold">
-                          Discounted Price:{" "}
+                          Giá sau khi giảm:{" "}
                           {discountedPrice.toLocaleString("vi-VN", {
                             style: "currency",
                             currency: "VND",

@@ -19,7 +19,7 @@ export const uploadMedia = async (file) => {
     console.log(error);
   }
 };
-console.log(uploadMedia)
+console.log(uploadMedia) // This logs the function definition, not the result
 export const deleteMediaFromCloudinary = async (publicId) => {
   try {
     await cloudinary.uploader.destroy(publicId);

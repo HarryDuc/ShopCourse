@@ -7,18 +7,30 @@ import { appStore } from "./app/store";
 import { Toaster } from "./components/ui/sonner";
 import { useLoadUserQuery } from "./features/api/authApi";
 import LoadingSpinner from "./components/LoadingSpinner";
+import React from "react";
+import { ChatProvider } from "./context/ChatContext";
 
 const Custom = ({ children }) => {
-  const { isLoading } = useLoadUserQuery();
-  return <>{isLoading ? <LoadingSpinner/> : <>{children}</>}</>;
+  const { isLoading } = useLoadUserQuery({
+    refetchOnMountOrArgChange: true,
+    skip: false,
+  });
+
+  return (
+    <React.Suspense fallback={<LoadingSpinner />}>
+      {isLoading ? <LoadingSpinner /> : children}
+    </React.Suspense>
+  );
 };
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={appStore}>
       <Custom>
-        <App />
-        <Toaster />
+        <ChatProvider>
+          <App />
+          <Toaster />
+        </ChatProvider>
       </Custom>
     </Provider>
   </StrictMode>

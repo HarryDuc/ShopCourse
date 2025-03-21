@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "67d6ea8e8bcd509914dc4502"
+  },
+  "code": "GIAM50",
+  "discountType": "percentage",
+  "discountValue": 50,
+  "maxUses": 10,
+  "currentUses": 0,
+  "startDate": {
+    "$date": "2025-03-16T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2025-03-19T00:00:00.000Z"
+  },
+  "courses": [
+    {
+      "$oid": "67d6cf0539bf1dbb25984378"
+    }
+  ],
+  "isActive": true,
+  "createdBy": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T15:13:18.271Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T15:13:18.271Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d703e6f437305f9bf95001"
+  },
+  "code": "GTHV103",
+  "discountType": "percentage",
+  "discountValue": 59,
+  "maxUses": 5,
+  "currentUses": 0,
+  "startDate": {
+    "$date": "2025-03-10T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2025-03-20T00:00:00.000Z"
+  },
+  "courses": [
+    {
+      "$oid": "67d70072f437305f9bf94e8f"
+    }
+  ],
+  "isActive": true,
+  "createdBy": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T17:01:26.255Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:01:26.255Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7042df437305f9bf95006"
+  },
+  "code": "QTPN83",
+  "discountType": "percentage",
+  "discountValue": 70,
+  "maxUses": 3,
+  "currentUses": 0,
+  "startDate": {
+    "$date": "2025-03-08T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2025-03-18T00:00:00.000Z"
+  },
+  "courses": [
+    {
+      "$oid": "67d6fdedf437305f9bf94e3f"
+    }
+  ],
+  "isActive": true,
+  "createdBy": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T17:02:37.763Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:02:37.763Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70455f437305f9bf9500b"
+  },
+  "code": "SUD99",
+  "discountType": "percentage",
+  "discountValue": 90,
+  "maxUses": 1,
+  "currentUses": 1,
+  "startDate": {
+    "$date": "2025-03-01T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2025-03-31T00:00:00.000Z"
+  },
+  "courses": [
+    {
+      "$oid": "67d7028bf437305f9bf94ed9"
+    }
+  ],
+  "isActive": true,
+  "createdBy": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T17:03:17.220Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:01.960Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7048ef437305f9bf95010"
+  },
+  "code": "SIEUUUDAI99",
+  "discountType": "percentage",
+  "discountValue": 99,
+  "maxUses": 1,
+  "currentUses": 0,
+  "startDate": {
+    "$date": "2025-03-19T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2025-03-20T00:00:00.000Z"
+  },
+  "courses": [
+    {
+      "$oid": "67d6f98bf437305f9bf94d9e"
+    }
+  ],
+  "isActive": true,
+  "createdBy": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T17:04:14.086Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:04:14.086Z"
+  },
+  "__v": 0
+}]

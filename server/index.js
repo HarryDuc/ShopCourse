@@ -11,7 +11,8 @@ import courseProgressRoute from "./routes/courseProgress.route.js";
 import videoRoutes from "./routes/video.route.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import voucherRoute from "./routes/voucher.route.js";
-import { uploadMedia } from "./utils/cloudinary.js";
+import bannedWordRoutes from "./routes/bannedWordRoutes.js";
+import chatRoute from "./routes/chat.route.js";
 
 dotenv.config({});
 
@@ -21,19 +22,20 @@ const app = express();
 
 // Webhook route phải được xử lý trước khi parse JSON
 app.use((req, res, next) => {
-    if (req.originalUrl === '/api/v1/purchase/webhook') {
-        express.raw({ type: 'application/json' })(req, res, next);
-    } else {
-        express.json()(req, res, next);
-    }
+  if (req.originalUrl === "/api/v1/purchase/webhook") {
+    express.raw({ type: "application/json" })(req, res, next);
+  } else {
+    express.json()(req, res, next);
+  }
 });
 
-
 app.use(cookieParser());
-app.use(cors({
+app.use(
+  cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
-    credentials: true
-}));
+    credentials: true,
+  })
+);
 
 // apis
 app.use("/api/v1/media", mediaRoute);
@@ -43,15 +45,14 @@ app.use("/api/v1/purchase", purchaseRoute);
 app.use("/api/v1/progress", courseProgressRoute);
 app.use("/api/v1/comments", commentRoutes);
 app.use("/api/v1/voucher", voucherRoute);
+app.use("/api/v1/banned-words", bannedWordRoutes);
+app.use("/api/v1/chat", chatRoute);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/video", videoRoutes);
 
 const PORT = process.env.PORT || 8080;
 
-console.log(uploadMedia);
 
 app.listen(PORT, () => {
-    console.log(`Server listen at port ${PORT}`);
+  console.log(`Server listen at port ${PORT}`);
 });
-
-

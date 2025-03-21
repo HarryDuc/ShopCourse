@@ -2,7 +2,6 @@ import RichTextEditor from "@/components/RichTextEditor";
 import { Button } from "@/components/ui/button";
 import { useDeleteCourseMutation } from "@/features/api/courseApi";
 
-
 import {
   Card,
   CardContent,
@@ -58,28 +57,30 @@ const CourseTab = () => {
     courseThumbnail: "",
   });
 
-  const { data: courseByIdData, isLoading: courseByIdLoading, refetch } =
-    useGetCourseByIdQuery(courseId);
+  const {
+    data: courseByIdData,
+    isLoading: courseByIdLoading,
+    refetch,
+  } = useGetCourseByIdQuery(courseId);
 
-  const [publishCourse, { }] = usePublishCourseMutation();
+  const [publishCourse, {}] = usePublishCourseMutation();
 
   useEffect(() => {
-    if (courseByIdData?.course) {
-      const course = courseByIdData?.course;
+    if (courseByIdData?.course && !input.courseTitle) {
+      const course = courseByIdData.course;
       setInput({
-        courseTitle: course.courseTitle,
-        subTitle: course.subTitle,
-        description: course.description,
-        category: course.category,
-        courseLevel: course.courseLevel,
-        coursePrice: course.coursePrice,
+        courseTitle: course.courseTitle || "",
+        subTitle: course.subTitle || "",
+        description: course.description || "",
+        category: course.category || "",
+        courseLevel: course.courseLevel || "",
+        coursePrice: course.coursePrice || "",
         courseThumbnail: "",
       });
     }
   }, [courseByIdData]);
 
   const [previewThumbnail, setPreviewThumbnail] = useState("");
-
 
   const [editCourse, { data, isLoading, isSuccess, error }] =
     useEditCourseMutation();
@@ -121,26 +122,33 @@ const CourseTab = () => {
 
   const publishStatusHandler = async (action) => {
     try {
-      const response = await publishCourse({ courseId, query: action });
-      if (response.data) {
-        refetch();
-        toast.success(response.data.message);
+      const response = await publishCourse({
+        courseId,
+        query: action,
+      }).unwrap();
+      if (response) {
+        await refetch();
+        toast.success(response.message);
       }
     } catch (error) {
       toast.error("Không xuất bản hoặc hủy xuất bản khóa học");
     }
-  }
+  };
 
   useEffect(() => {
-    if (isSuccess) {
-      toast.success(data.message || "Cập nhật khóa học.");
-    }
-    if (error) {
-      toast.error(error.data.message || "Lỗi cập nhât khóa học");
-    }
-  }, [isSuccess, error]);
+    const handleSuccess = async () => {
+      if (isSuccess && data) {
+        toast.success(data.message || "Cập nhật khóa học thành công");
+        await refetch();
+      }
+      if (error) {
+        toast.error(error.data?.message || "Lỗi cập nhật khóa học");
+      }
+    };
+    handleSuccess();
+  }, [isSuccess, error, data]);
 
-  if (courseByIdLoading) return <h1>Đang tải...</h1>
+  if (courseByIdLoading) return <h1>Đang tải...</h1>;
 
   return (
     <Card>
@@ -148,14 +156,27 @@ const CourseTab = () => {
         <div>
           <CardTitle>Thông tin cơ bản khóa học</CardTitle>
           <CardDescription>
-          Thực hiện các thay đổi đối với các khóa học của bạn tại đây. Nhấp vào lưu khi bạn hoàn tất.
+            Thực hiện các thay đổi đối với các khóa học của bạn tại đây. Nhấp
+            vào lưu khi bạn hoàn tất.
           </CardDescription>
         </div>
         <div className="space-x-2">
-          <Button disabled={courseByIdData?.course.lectures.length === 0} variant="outline" onClick={() => publishStatusHandler(courseByIdData?.course.isPublished ? "false" : "true")}>
+          <Button
+            disabled={courseByIdData?.course.lectures.length === 0}
+            variant="outline"
+            onClick={() =>
+              publishStatusHandler(
+                courseByIdData?.course.isPublished ? "false" : "true"
+              )
+            }
+          >
             {courseByIdData?.course.isPublished ? "Hủy xuất bản" : "Xuất bản"}
           </Button>
-          <Button disabled={isLoadingDelete} variant="destructive" onClick={handleRemoveCourse}>
+          <Button
+            disabled={isLoadingDelete}
+            variant="destructive"
+            onClick={handleRemoveCourse}
+          >
             {isLoadingDelete ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Loại bỏ...
@@ -164,8 +185,6 @@ const CourseTab = () => {
               "Xóa khóa học"
             )}
           </Button>
-
-
         </div>
       </CardHeader>
       <CardContent>
@@ -275,7 +294,10 @@ const CourseTab = () => {
             )}
           </div>
           <div>
-            <Button onClick={() => navigate("/instructor/course")} variant="outline">
+            <Button
+              onClick={() => navigate("/instructor/course")}
+              variant="outline"
+            >
               Hủy
             </Button>
             <Button disabled={isLoading} onClick={updateCourseHandler}>

@@ -1,0 +1,247 @@
+[{
+  "_id": {
+    "$oid": "67d7052ff437305f9bf95093"
+  },
+  "content": "bài hay",
+  "courseId": {
+    "$oid": "67d6cf0539bf1dbb25984378"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "approved",
+  "moderatedBy": {
+    "$oid": "67d6c8ff39aa6b391cf23bce"
+  },
+  "moderatedAt": {
+    "$date": "2025-03-16T17:07:39.164Z"
+  },
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:06:55.941Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:06:55.941Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70539f437305f9bf95099"
+  },
+  "content": "hay",
+  "courseId": {
+    "$oid": "67d6cf0539bf1dbb25984378"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "approved",
+  "moderatedBy": {
+    "$oid": "67d6c8ff39aa6b391cf23bce"
+  },
+  "moderatedAt": {
+    "$date": "2025-03-16T17:07:39.923Z"
+  },
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:07:05.825Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:07:05.825Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70544f437305f9bf950a7"
+  },
+  "content": "dễ",
+  "courseId": {
+    "$oid": "67d70072f437305f9bf94e8f"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "approved",
+  "moderatedBy": {
+    "$oid": "67d6c8ff39aa6b391cf23bce"
+  },
+  "moderatedAt": {
+    "$date": "2025-03-16T17:07:43.829Z"
+  },
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:07:16.125Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:07:16.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7054bf437305f9bf950ad"
+  },
+  "content": "Vip",
+  "courseId": {
+    "$oid": "67d70072f437305f9bf94e8f"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "pending",
+  "moderatedBy": null,
+  "moderatedAt": null,
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:07:23.154Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:07:23.154Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d706adf437305f9bf95330"
+  },
+  "content": "Quá ngon",
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "pending",
+  "moderatedBy": null,
+  "moderatedAt": null,
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:13:17.429Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:17.429Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d706cbf437305f9bf9533a"
+  },
+  "content": "ez\nnon\ngà",
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "pending",
+  "moderatedBy": null,
+  "moderatedAt": null,
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:13:47.327Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:47.327Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d706d1f437305f9bf95340"
+  },
+  "content": "dm",
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "pending",
+  "moderatedBy": null,
+  "moderatedAt": null,
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:13:53.760Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:53.760Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70717f437305f9bf9537e"
+  },
+  "content": "vip",
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "approved",
+  "moderatedBy": null,
+  "moderatedAt": {
+    "$date": "2025-03-16T17:15:03.977Z"
+  },
+  "bannedWords": [],
+  "createdAt": {
+    "$date": "2025-03-16T17:15:03.976Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:15:03.976Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7071cf437305f9bf95385"
+  },
+  "content": "non",
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "parentId": null,
+  "replies": [],
+  "status": "pending",
+  "moderatedBy": null,
+  "moderatedAt": null,
+  "bannedWords": [
+    {
+      "word": "non",
+      "category": "spam",
+      "_id": {
+        "$oid": "67d7071cf437305f9bf95388"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-03-16T17:15:08.335Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:15:08.335Z"
+  },
+  "__v": 0
+}]

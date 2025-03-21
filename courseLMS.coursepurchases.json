@@ -1,0 +1,138 @@
+[{
+  "_id": {
+    "$oid": "67d7035ff437305f9bf94f2c"
+  },
+  "courseId": {
+    "$oid": "67d6cf0539bf1dbb25984378"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "amount": 499000,
+  "status": "completed",
+  "paymentId": "cs_test_a1fThWmzPum49xZOSlynvcXPqgS19CjYReLoepu1zeCZz8H8UBkAhShpOg",
+  "voucherCode": null,
+  "voucherUpdated": false,
+  "createdAt": {
+    "$date": "2025-03-16T16:59:11.397Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:59:24.574Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7037af437305f9bf94f88"
+  },
+  "courseId": {
+    "$oid": "67d70072f437305f9bf94e8f"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "amount": 3990000,
+  "status": "completed",
+  "paymentId": "cs_test_a14EabEl6JdKbRi9BoHD7JDokHbefFqRfH6U8YfmvxxSxswFtdE1ajl1nz",
+  "voucherCode": null,
+  "voucherUpdated": false,
+  "createdAt": {
+    "$date": "2025-03-16T16:59:38.287Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:59:58.305Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d7058bf437305f9bf95165"
+  },
+  "courseId": {
+    "$oid": "67d6fc1df437305f9bf94df6"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "amount": 1039000,
+  "status": "pending",
+  "paymentId": "cs_test_a1ofEYRsZ3lBRFhRcaZmuCLoi6kr5kz1wLOMBzB9eriU1Un8NOpQseUiXO",
+  "voucherCode": null,
+  "voucherUpdated": false,
+  "createdAt": {
+    "$date": "2025-03-16T17:08:27.912Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:08:27.912Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70621f437305f9bf95211"
+  },
+  "courseId": {
+    "$oid": "67d6fc1df437305f9bf94df6"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "amount": 1039000,
+  "status": "pending",
+  "paymentId": "cs_test_a16B4rxgNiskZoyhI0h3FEqg29TXhEEsWRxPldysOpv66GL4X2v3ScIImI",
+  "voucherCode": null,
+  "voucherUpdated": false,
+  "createdAt": {
+    "$date": "2025-03-16T17:10:57.891Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:10:57.891Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70655f437305f9bf95276"
+  },
+  "courseId": {
+    "$oid": "67d6fc1df437305f9bf94df6"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "amount": 1039000,
+  "status": "pending",
+  "paymentId": "cs_test_a16M9KPgkPChHikEp6euHyN7yWF0iS3D0EeCSQBWJVORTv6FW5NK7NnVci",
+  "voucherCode": null,
+  "voucherUpdated": false,
+  "createdAt": {
+    "$date": "2025-03-16T17:11:49.346Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:11:49.346Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70692f437305f9bf952e1"
+  },
+  "courseId": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "userId": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "amount": 299000,
+  "status": "completed",
+  "paymentId": "cs_test_a1hTrHtGaMhDUqLYfAFjt1MuAQhxKDqZW52whnDZMBtpygiz13CryPboeA",
+  "voucherCode": "SUD99",
+  "voucherUpdated": true,
+  "createdAt": {
+    "$date": "2025-03-16T17:12:50.456Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:02.084Z"
+  },
+  "__v": 0
+}]

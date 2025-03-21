@@ -1,0 +1,244 @@
+[{
+  "_id": {
+    "$oid": "67d6cf0539bf1dbb25984378"
+  },
+  "courseTitle": "30 Days of Code: The Complete Python Bootcamp (Vietnamese)",
+  "category": "Python",
+  "enrolledStudents": [
+    {
+      "$oid": "67d6c8b739aa6b391cf23bbe"
+    }
+  ],
+  "lectures": [
+    {
+      "$oid": "67d6cf3939bf1dbb25984380"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T13:15:49.170Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:59:24.587Z"
+  },
+  "__v": 4,
+  "courseLevel": "Beginner",
+  "coursePrice": 499000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742140962/bzu3suwwrc4lwofwyyua.jpg",
+  "description": "<p><strong>Chào mừng đến với khoá học: 30 Days of Code: The Complete Python Bootcamp (Vietnamese)</strong></p><p><br></p><p><strong>GIỚI&nbsp;THIỆU&nbsp;GIẢNG&nbsp;VIÊN</strong></p><p>Mình là một Senior AI Engineer, đã có nhiều năm kinh nghiệm trong lĩnh vực Machine Learning, Deep Learning, và phát triển phần mềm. Qua các dự án thực tế, mình nhận ra rằng người mới bắt đầu thường gặp khó khăn với việc tiếp cận nhiều kiến thức, không hệ thống hóa và hiểu bản chất vấn đề. Chính vì thế, mình đã thiết kế khóa học này để đơn giản hóa lộ trình học Python, giúp bạn nắm vững kiến thức nhanh chóng và áp dụng được vào thực tế.</p><p>Khóa học không chỉ dừng lại ở lý thuyết, mình sẽ đồng hành cùng bạn qua từng bài học thực hành và dự án để các bạn có thể củng cố kiến thức đã học.</p><p><strong>Về khóa học \"Chinh phục Python trong 30 ngày: Từ cơ bản đến nâng cao\" - Tiếng Việt</strong></p><p>Nếu bạn là người mới bắt đầu lập trình hoặc đã có một chút kiến thức về Python và muốn hoàn thiện kỹ năng, nếu bạn đang muốn chuyển ngành sang Công nghệ thông tin thì khóa học này sẽ là sự lựa chọn lý tưởng của bạn. Khóa học sẽ cung cấp cho bạn một lộ trình học Python toàn diện, đây chính là một số chủ đề chúng ta sẽ đi qua trong khóa học này:</p><ol><li><strong>Biến, kiểu dữ liệu, phép toán số học, so sánh, logic, chuỗi - string</strong></li><li><strong>Data collection: list, dictionary, tuple, set</strong></li><li><strong>Cấu trúc điều khiến if-else, vòng lặp, hàm, xử lý file</strong></li><li><strong>Quản lý môi trường ảo và gói phần mềm:</strong>&nbsp;Làm chủ môi trường phát triển Python</li><li><strong>List compehension, lỗi, cách xử lý ngoại lệ, decorators</strong></li><li><strong>Lập trình hướng đối tượng: class, objects</strong></li><li><strong>Xử lý dữ liệu:</strong>&nbsp;Numpy và Pandas để phân tích dữ liệu nhanh chóng và hiệu quả</li><li><strong>Lập trình giao diện:</strong>&nbsp;Xây dựng ứng dụng desktop đơn giản với Tkinter.</li><li><strong>Tích hợp cơ sở dữ liệu:</strong>&nbsp;Làm việc với MongoDB và SQLite3.</li><li><strong>Web scraping:</strong>&nbsp;Thu thập dữ liệu tự động từ Internet</li><li><strong>Xây dựng và triển khai API:</strong>&nbsp;Cách kết nối các dịch vụ thông qua Python</li><li><strong>Tips and tricks</strong></li></ol><p><strong>PHƯƠNG PHÁP HỌC</strong></p><p>Khóa học sử dụng phương pháp học tập kết hợp lý thuyết và thực hành. Với mỗi chủ đề, bạn sẽ:</p><ol><li>Nắm vững lý thuyết thông qua giải thích chi tiết và dễ hiểu</li><li>Thực hành qua các bài tập, dự án nhỏ, và ví dụ thực tế</li><li>Tích lũy kỹ năng để xây dựng các dự án lớn hơn trong tương lai</li></ol><p><strong>LỢI ÍCH SAU KHÓA HỌC</strong></p><p>Hoàn thành khóa học, bạn sẽ:</p><ul><li>Thành thạo lập trình Python từ cơ bản đến nâng cao</li><li>Sẵn sàng bước vào các lĩnh vực trí tuệ nhân tạo (Machine learning, AI), phân tích data (Data Science), hoặc phát triển web</li><li>Xây dựng được các dự án thực tế và có thể tự tin ứng dụng Python vào công việc hoặc học tập</li></ul><p><strong>LIÊN LẠC VỚI GIẢNG VIÊN</strong></p><p>Các bạn có thể sử dụng tính năng Q&amp;A của Udemy để gửi câu hỏi.&nbsp;<strong>Mình sẽ thường xuyên kiểm tra và trả lời các thắc mắc, cũng như cập nhật video nếu cần</strong>. Mình luôn ở đây để hỗ trợ các bạn một cách nhanh nhất.</p><h2><strong>Đối tượng của khóa học này:</strong></h2><ul><li>Dành cho người mới bắt đầu, muốn học Python từ căn bản</li><li>Các bạn đã kiến thức cơ bản về Python nhưng muốn hệ thống lại và học những phần nâng cao hơn</li><li>Các bạn đang có nhu cầu nâng cao kỹ năng cũng như tìm kiếm cơ hội việc làm mới</li></ul>",
+  "subTitle": "Chinh Phục Python Trong 30 Ngày: Từ Cơ Bản Đến Nâng Cao (Tiếng Việt)"
+},
+{
+  "_id": {
+    "$oid": "67d6ee9bf437305f9bf94c7f"
+  },
+  "courseTitle": "AI Development with Qwen 2.5 & Ollama: Build AI Apps Locally",
+  "category": "Python",
+  "enrolledStudents": [],
+  "lectures": [
+    {
+      "$oid": "67d6f1ecf437305f9bf94cb0"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T15:30:35.887Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:00:57.879Z"
+  },
+  "__v": 1,
+  "courseLevel": "Beginner",
+  "coursePrice": 1090000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742140857/r3fbww8hj3mtbmzb9hgm.jpg",
+  "description": "<p>Bạn đã sẵn sàng&nbsp;<strong>xây dựng các ứng dụng hỗ trợ AI cục bộ mà</strong>&nbsp;không cần dựa vào API dựa trên đám mây chưa? Khóa học thực hành này sẽ dạy bạn cách&nbsp;<strong>phát triển, tối ưu hóa và triển khai các ứng dụng AI</strong>&nbsp;bằng cách sử dụng&nbsp;<strong>Qwen 2.5</strong>&nbsp;và&nbsp;<strong>Ollama</strong>, hai công cụ mạnh mẽ để chạy&nbsp;<strong>các mô hình ngôn ngữ lớn (LLM) trên máy cục bộ của bạn</strong>.</p><p>Với sự gia tăng của&nbsp;<strong>các mô hình AI mã nguồn mở</strong>, các nhà phát triển giờ đây có cơ hội&nbsp;<strong>tạo ra các ứng dụng thông minh</strong>&nbsp;xử lý văn bản, tạo nội dung và tự động hóa các tác vụ — tất cả trong khi vẫn giữ dữ liệu&nbsp;<strong>riêng tư và an toàn</strong>. Trong khóa học này, bạn sẽ học cách&nbsp;<strong>cài đặt, định cấu hình và tích hợp Qwen 2.5 với Ollama</strong>, xây dựng&nbsp;<strong>phần phụ trợ AI dựa trên FastAPI</strong>&nbsp;và phát triển&nbsp;<strong>các giải pháp AI trong thế giới thực</strong>.</p><p><strong>Tại sao nên học Qwen 2.5 và Ollama?</strong></p><p><strong>Qwen 2.5</strong>&nbsp;là&nbsp;<strong>một mô hình ngôn ngữ lớn (LLM) mạnh mẽ do Alibaba Cloud phát triển</strong>, được tối ưu hóa cho&nbsp;<strong>xử lý ngôn ngữ tự nhiên (NLP), tạo văn bản, suy luận và hỗ trợ mã</strong>. Không giống như các mô hình dựa trên đám mây truyền thống như&nbsp;<strong>GPT-4</strong>,&nbsp;<strong>Qwen 2.5</strong>&nbsp;có thể chạy&nbsp;<strong>cục bộ</strong>, lý tưởng cho&nbsp;<strong>các ứng dụng AI nhạy cảm với quyền riêng tư</strong>.</p><p><strong>Ollama</strong>&nbsp;là một&nbsp;<strong>công cụ quản lý mô hình AI</strong>&nbsp;cho phép các nhà phát triển&nbsp;<strong>chạy và triển khai LLM cục bộ</strong>&nbsp;với&nbsp;<strong>hiệu quả cao và độ trễ thấp</strong>. Với Ollama, bạn có thể&nbsp;<strong>kéo các mô hình, chạy chúng trong các ứng dụng của mình và tinh chỉnh chúng cho các tác vụ cụ thể</strong>—tất cả mà không cần tài nguyên đám mây đắt tiền.</p><p>Khóa học này thực&nbsp;<strong>tế và thực hành</strong>, được thiết kế để giúp bạn&nbsp;<strong>áp dụng AI trong các dự án trong thế giới thực</strong>. Cho dù bạn muốn xây dựng&nbsp;<strong>giao diện trò chuyện được hỗ trợ bởi AI, trình tóm tắt tài liệu, trợ lý mã hay các công cụ tự động hóa thông minh</strong>, khóa học này sẽ trang bị cho bạn những kỹ năng cần thiết.</p><p><strong>Tại sao nên tham gia khóa học này?</strong></p><p>-&nbsp;<strong>Phát triển AI thực hành</strong>&nbsp;với&nbsp;<strong>các dự án</strong></p><p>trong thế giới thực-&nbsp;<strong>Không phụ thuộc vào API đám mây</strong>&nbsp;— giữ cho các ứng dụng AI của bạn&nbsp;<strong>riêng tư và an toàn</strong></p><p>-&nbsp;<strong>Kỹ năng tương lai để</strong>&nbsp;làm việc với&nbsp;<strong>LLM mã nguồn mở</strong></p><p>-&nbsp;<strong>Triển khai AI nhanh chóng, hiệu quả</strong>&nbsp;với&nbsp;<strong>thực thi cục bộ của Ollama</strong></p><p>Vào cuối khóa học này, bạn sẽ có&nbsp;<strong>các ứng dụng hỗ trợ AI chạy trên máy của mình</strong>,&nbsp;<strong>hiểu biết sâu sắc về LLM</strong>&nbsp;và các kỹ năng để phát triển&nbsp;<strong>các giải pháp AI trong tương lai</strong>.&nbsp;<strong>Bạn đã sẵn sàng để bắt đầu xây dựng chưa?</strong></p><h2><strong>Đối tượng của khóa học này:</strong></h2><ul><li>Các nhà phát triển Python đang tìm cách tích hợp AI vào dự án của họ</li><li>Các kỹ sư phần mềm muốn xây dựng các ứng dụng dựa trên LLM</li><li>Người mới bắt đầu AI/ML mong muốn học phát triển AI thực hành</li><li>Các nhà phát triển toàn diện muốn tích hợp AI với các ứng dụng web</li><li>Các doanh nhân công nghệ khám phá các giải pháp hỗ trợ AI</li><li>Sinh viên và nhà nghiên cứu quan tâm đến việc thực hiện mô hình AI địa phương</li></ul>",
+  "subTitle": "Build AI-powered applications locally using Qwen 2.5 & Ollama. Learn Python, FastAPI, and real-world AI development"
+},
+{
+  "_id": {
+    "$oid": "67d6f661f437305f9bf94d55"
+  },
+  "courseTitle": "Lập trình Java Backend Full Steps",
+  "category": "Javascript",
+  "enrolledStudents": [],
+  "lectures": [
+    {
+      "$oid": "67d6f733f437305f9bf94d5e"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T16:03:45.677Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:09:11.184Z"
+  },
+  "__v": 1,
+  "courseLevel": "Medium",
+  "coursePrice": 590000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742141165/myi9aqv6rramgp9ml3zj.jpg",
+  "description": "<p><strong>1. Khóa học này dành cho ai?</strong></p><ul><li><strong>Người mới bắt đầu</strong>&nbsp;muốn học lập trình backend từ đầu.</li><li><strong>Lập trình viên</strong>&nbsp;đã có kiến thức cơ bản về Java và muốn chuyên sâu vào backend.</li><li><strong>Kỹ sư phần mềm</strong>&nbsp;đang tìm kiếm các giải pháp tối ưu cho hệ thống backend của mình.</li><li><strong>Sinh viên công nghệ thông tin</strong>&nbsp;muốn chuẩn bị kiến thức thực tiễn cho công việc sau khi ra trường.</li></ul><p><br></p><p><strong>2. Nội dung khóa học có gì đặc biệt ?</strong></p><p><strong>Phần 1: Xây Dựng Ứng Dụng Backend Với Java</strong></p><ul><li><strong>Spring Framework</strong>: Học cách sử dụng&nbsp;<strong>Spring Boot</strong>, một trong những framework mạnh mẽ nhất dành cho lập trình backend với Java.</li><li><strong>Thiết kế API RESTful</strong>: Hướng dẫn chi tiết cách xây dựng và triển khai&nbsp;<strong>API REST</strong>&nbsp;– xương sống của các hệ thống backend hiện đại.</li><li><strong>Tương tác với cơ sở dữ liệu</strong>: Sử dụng&nbsp;<strong>JPA</strong>&nbsp;và&nbsp;<strong>Hibernate</strong>&nbsp;để quản lý dữ liệu và thao tác với các bảng trong cơ sở dữ liệu.</li></ul><p><strong>Phần 2: Xử Lý Bảo Mật Và Quản Lý Dữ Liệu</strong></p><ul><li><strong>Bảo mật ứng dụng</strong>: Tìm hiểu cách bảo mật API, xác thực người dùng với&nbsp;<strong>JWT</strong>&nbsp;(JSON Web Token) và bảo mật hệ thống bằng&nbsp;<strong>Spring Security</strong>.</li><li><strong>Quản lý dữ liệu</strong>: Học cách xử lý truy vấn dữ liệu phức tạp, tối ưu hóa cơ sở dữ liệu và sử dụng&nbsp;<strong>Redis</strong>&nbsp;để lưu trữ dữ liệu tạm thời (cache).</li></ul><p><strong>Phần 3: Xây Dựng Ứng Dụng Thực Tế</strong></p><ul><li><strong>Triển khai dự án hoàn chỉnh</strong>: Bạn sẽ được hướng dẫn từ A đến Z cách xây dựng một hệ thống backend thực tế, bao gồm quản lý người dùng, xác thực và lưu trữ dữ liệu.</li><li><strong>Triển khai ứng dụng</strong>: Sử dụng&nbsp;<strong>Docker</strong>&nbsp;để triển khai ứng dụng Java của bạn lên môi trường production.</li></ul><p><strong>Phần 4: Kỹ Thuật Tối Ưu Và Mở Rộng Hệ Thống</strong></p><ul><li><strong>Cân bằng tải và tối ưu hiệu suất</strong>: Học cách xây dựng các hệ thống chịu tải lớn, tối ưu tốc độ xử lý, và cân bằng tải giữa các server.</li><li><strong>Phân tích và giám sát</strong>: Sử dụng các công cụ như&nbsp;<strong>Prometheus</strong>,&nbsp;<strong>Grafana</strong>&nbsp;để giám sát và phân tích hiệu suất hệ thống.</li></ul><h2><strong>Đối tượng của khóa học này:</strong></h2><ul><li>Sinh viên, Fresher, Người chuyển nghề và Junior Java Develop muốn nâng cao kỹ năng lập trình Java Backend</li></ul><p><br></p>",
+  "subTitle": "Viết tài liệu yêu cầu, thiết kế infra, thiết kế database, thiết kế UI/UX, Phát triển Ứng dụng, Triển khai CI/CD"
+},
+{
+  "_id": {
+    "$oid": "67d6f98bf437305f9bf94d9e"
+  },
+  "courseTitle": "Javascript For Beginners Complete Course",
+  "category": "Javascript",
+  "enrolledStudents": [],
+  "lectures": [
+    {
+      "$oid": "67d6fa33f437305f9bf94db4"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T16:17:15.101Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:23:15.442Z"
+  },
+  "__v": 1,
+  "courseLevel": "Beginner",
+  "coursePrice": 399000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742141973/nrjfikap8njnyqqkjyay.jpg",
+  "description": "<p><strong><em>Học ngôn ngữ lập trình Javascript</em></strong></p><ul><li>Khóa học được tạo ra nội dung kỹ lưỡng, rộng rãi nhưng dễ theo dõi mà bạn sẽ dễ dàng hiểu và tiếp thu.</li><li>Khóa học bắt đầu với những kiến thức cơ bản, bao gồm các nguyên tắc cơ bản về JavaScript, lập trình và tương tác với người dùng.</li><li><br></li><li>Chương trình giảng dạy sẽ rất thực hành khi chúng tôi hướng dẫn bạn từ đầu đến cuối để trở thành một nhà phát triển Javascript chuyên nghiệp. Chúng tôi sẽ bắt đầu từ đầu bằng cách dạy bạn những kiến thức cơ bản về Javascript và các nguyên tắc cơ bản về lập trình, sau đó thực hiện thực tế và sẵn sàng cho thế giới thực.</li><li><br></li><li>Mặc dù Javascript rất phức tạp đối với người mới bắt đầu học, nhưng nó được sử dụng rộng rãi trong nhiều lĩnh vực phát triển web.</li><li>Khóa học này giúp bạn bắt đầu với phần giới thiệu về JavaScript. Nó giả định rằng bạn chưa quen với ngôn ngữ này, vì vậy nó giúp bạn bắt đầu với các chức năng cơ bản như tạo hàm, tạo biến và gọi các dòng mã này từ các trang HTML tiêu chuẩn của bạn. Nó nói về các sự kiện và trình kích hoạt để xử lý sự kiện tùy chỉnh. Nó nói về khớp mẫu, tìm kiếm văn bản trong một trang, kiểm soát luồng và mô hình đối tượng tài liệu (DOM). Chúng ta bắt đầu với những điều cơ bản và chuyển sang chức năng phức tạp hơn như mảng và đối tượng. Sau đó, chúng ta thảo luận về cách viết kịch bản các phần tử phổ biến với JavaScript như biểu mẫu và bảng. Cuối cùng, chúng ta thảo luận về các thư viện chính như Ajax, cho phép bạn thực hiện các cuộc gọi không đồng bộ đến các tập lệnh phía máy chủ mà không cần tải lại trang web trong máy chủ.</li><li>Nắm vững các nguyên tắc cơ bản của việc viết tập lệnh Javascript</li><li>Tìm hiểu các yếu tố kịch bản Javascript cốt lõi như biến và Đối tượng</li><li>Khám phá cách làm việc với danh sách và dữ liệu trình tự</li><li>Viết các hàm Javascript để tạo điều kiện tái sử dụng mã</li><li>Sử dụng Javascript để đọc và ghi tệp</li><li>Làm cho mã của họ mạnh mẽ bằng cách xử lý lỗi và ngoại lệ đúng cách</li><li>Tìm kiếm văn bản bằng cách sử dụng biểu thức chính quy</li><li>Các chủ đề được đề cập trong khóa học này là:</li><li><strong><em>* Nội dung khóa học Javascript:</em></strong></li><li><strong>Giới thiệu Javascript</strong></li><li><strong>Mảng Javascript</strong></li><li><strong>Biến Javascript</strong></li><li><strong>Chức năng Javascript</strong></li><li><strong>Đối tượng Javascript</strong></li><li><strong>Câu lệnh điều khiển Javascript</strong></li><li><strong>Cookie Javascript</strong></li><li><strong>Câu lệnh Javascript Loop</strong></li><li><strong>Cấu trúc dữ liệu Javascript</strong></li><li><strong>Xử lý lỗi Javascript</strong></li><li><strong>Biểu thức chính quy Javascript</strong></li><li><strong>Hẹn gặp lại bạn trong khóa học</strong></li></ul><h2><strong>Đối tượng của khóa học này:</strong></h2><ul><li>Dành cho người mới bắt đầu lập trình Javascript</li><li>Dành cho những người mới sử dụng Javascript</li><li>Dành cho những người muốn học Javascript Fundamentals và sau đó Chuyển sang Phát triển Web</li></ul><p><br></p>",
+  "subTitle": "Học ngôn ngữ lập trình Javascript với tương tác thực tế"
+},
+{
+  "_id": {
+    "$oid": "67d6fc1df437305f9bf94df6"
+  },
+  "courseTitle": "Complete Guide in HTML, CSS & JavaScript: 2024 Edition",
+  "category": "HTML",
+  "enrolledStudents": [],
+  "lectures": [
+    {
+      "$oid": "67d6fc95f437305f9bf94dff"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T16:28:13.667Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:30:56.081Z"
+  },
+  "__v": 1,
+  "courseLevel": "Beginner",
+  "coursePrice": 1039000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742142551/jmstccdypj27ib0xkpf9.jpg",
+  "description": "<p>Khóa học này được thiết kế và dành cho những người mới bắt đầu muốn chuyển đổi hoặc bắt đầu sự nghiệp trong lĩnh vực phát triển web. Hướng dẫn từng bước cùng với các mẹo và kỹ thuật máy tính được cung cấp trong khóa học này. Khóa học bao gồm một nghiên cứu chuyên sâu dựa trên dự án về HTML, CSS &amp; Javascript và sinh viên cũng sẽ học cách khởi chạy hoặc triển khai trang web của họ trực tuyến. Điều này tập trung vào việc học bằng cách tiếp cận thay vì lý thuyết. Các khái niệm và lý thuyết cũng đang được dạy, nhưng chỉ khi nó rất phù hợp để tạo ra một dự án thực tế.</p><p>Kết thúc khóa học sẽ không chỉ giúp học viên hiểu biết về ba công nghệ này mà còn được học các công nghệ liên quan như ứng dụng FTP, tài nguyên mạng phân phối nội dung, tài nguyên web bên ngoài. Do đó, họ sẽ có đủ kiến thức làm việc để bắt đầu trong lĩnh vực phát triển web.</p><p>Học sinh sẽ học các kỹ thuật hiện đại khác nhau giúp họ đủ thành thạo để xây dựng các trang web đáp ứng.</p><p>Khóa học này bao gồm toàn bộ phạm vi cốt lõi của phát triển web, nhấn mạnh và tập trung vào các ví dụ thực tế, hướng dẫn sinh viên thông qua sự phức tạp của thiết kế, lập trình, gỡ lỗi và quan trọng nhất là triển khai các ứng dụng. Mục tiêu của khóa học này là trao quyền cho sinh viên một bộ kỹ năng toàn diện, giúp họ viết mã và triển khai ứng dụng của riêng mình lên một máy chủ web thực tế. Điều này được thiết kế để cung cấp cho họ sự linh hoạt để chuyên môn hóa trong một lĩnh vực cụ thể hoặc chuyển đổi liền mạch sang các công nghệ khác. Bằng cách xây dựng dựa trên nền tảng được đặt ra trong chương trình giảng dạy này, học sinh sẽ có được sự tự tin để khám phá và mở rộng chuyên môn của mình, cho phép họ tự do vạch ra con đường của riêng mình trong lĩnh vực phát triển phần mềm năng động.</p><p><br></p>",
+  "subTitle": "Hướng dẫn thực tế phát triển web từng bước chi tiết được thiết kế để giúp người mới bắt đầu trở thành nhà phát triển chuyên nghiệp."
+},
+{
+  "_id": {
+    "$oid": "67d6fdedf437305f9bf94e3f"
+  },
+  "courseTitle": "Complete React, Next.js & TypeScript Projects Course 2025",
+  "category": "Next JS",
+  "enrolledStudents": [],
+  "lectures": [
+    {
+      "$oid": "67d6feb3f437305f9bf94e48"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T16:35:57.837Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:40:23.900Z"
+  },
+  "__v": 1,
+  "courseLevel": "Beginner",
+  "coursePrice": 790000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742143076/nwwn0pn3xz3fvidc2hjy.jpg",
+  "description": "<p>Nội dung mới thú vị trong khóa học React</p><p>Tôi rất vui mừng thông báo rằng tôi đang bổ sung nhiều nội dung có giá trị hơn vào khóa học React của chúng tôi để giúp bạn đi trước các tiêu chuẩn ngành. Đây là những gì bạn có thể mong đợi:</p><p><br></p><ul><li>Hướng dẫn TypeScript toàn diện</li><li>Bài học chi tiết về React với TypeScript</li><li>Hoàn thành hướng dẫn Next.js với TypeScript</li><li>Một số dự án Next.js phức tạp</li><li>Hơn 30 giờ nội dung mới !!</li></ul><p>Luôn dẫn đầu với các tiêu chuẩn ngành mới nhất và nắm vững các kỹ năng cần thiết để phát triển React hiện đại!</p><p><br></p><p>Có gì mới không?</p><ol><li>Tích&nbsp;<strong>hợp TypeScript</strong>:</li></ol><ul><li>Hướng&nbsp;<strong>dẫn TypeScript</strong>: Tìm hiểu những điều cơ bản và các tính năng nâng cao của TypeScript.</li><li><strong>React với TypeScript</strong>: Nắm vững việc tích hợp TypeScript với React để xây dựng các ứng dụng mạnh mẽ.</li></ul><ol><li><strong>Next.js Hướng dẫn</strong>:</li></ol><ul><li><strong>Next.js với TypeScript</strong>: Hướng dẫn toàn diện về cách xây dựng các ứng dụng Next.js bằng TypeScript.</li><li><strong>Các dự án Next.js phức tạp</strong>: Làm việc trên các dự án trong thế giới thực tận dụng toàn bộ tiềm năng của Next.js.</li></ul><p>Tại sao lại có những bổ sung này?</p><ul><li><strong>Tiêu chuẩn ngành</strong>: Cả TypeScript và Next.js đều đã trở thành kỹ năng cần thiết cho việc phát triển React hiện đại.</li><li><strong>Các tính năng React mới</strong>: Nhiều tính năng React mới chỉ có sẵn thông qua các framework React như Next.js.</li><li><strong>Phát triển full-stack</strong>: Next.js cho phép phát triển full-stack nhanh hơn và hiệu quả hơn bằng cách cho phép mã phía máy chủ và phía máy khách cùng tồn tại liền mạch.</li><li><strong>Hiệu quả nhóm</strong>: TypeScript tăng cường khả năng bảo trì và cộng tác mã, khiến nó trở thành lựa chọn ưu tiên cho các nhóm lớn.</li></ul><p><br></p><p><br></p><p><strong>Mastering React 18: Xây dựng các ứng dụng web hiện đại</strong></p><p><br></p><p>Đi sâu vào thế giới năng động của phát triển front-end với khóa học toàn diện của chúng tôi về React 18, một thư viện JavaScript tiên tiến được sử dụng để tạo giao diện người dùng hấp dẫn. Được phát triển và duy trì bởi Facebook, React đã trở thành nền tảng trong việc xây dựng cả ứng dụng một trang và di động.</p><p><strong>Tại sao nên học React?</strong></p><p><br></p><ul><li><strong>Nhu cầu cao</strong>: Sự phổ biến của React khiến nó trở thành một kỹ năng có giá trị đối với những người tìm việc trong ngành công nghệ.</li><li><strong>Hiệu quả và hiệu suất</strong>: Việc sử dụng DOM ảo của React đảm bảo phát triển ứng dụng nhanh chóng, có thể mở rộng và hiệu quả.</li><li><strong>Tính linh hoạt và khả năng tái sử dụng</strong>: Thiết kế của thư viện cho phép các thành phần có thể tái sử dụng, đơn giản hóa quá trình phát triển và giúp việc bảo trì mã dễ dàng hơn.</li></ul><p><strong>Phạm vi khóa học:</strong></p><p><br></p><ul><li>React&nbsp;<strong>Fundamentals</strong>: Hiểu các nguyên tắc cốt lõi của React.</li><li><strong>Các tính năng mới nhất</strong>: Thực hành với React 18.</li><li><strong>Hooks &amp; State Management</strong>: Đi sâu vào useState, useEffect, useRef, useReducer, useCallback, useMemo và các hook tùy chỉnh.</li><li><strong>Khái niệm nâng cao</strong>: Tìm hiểu về kết xuất có điều kiện, khoan đạo cụ, API ngữ cảnh, v.v.</li><li><strong>Điều hướng và định tuyến</strong>: Khám phá React Router 6 để điều hướng ứng dụng liền mạch.</li><li><strong>Xử lý dữ liệu</strong>: Sử dụng axios và redux-toolkit để quản lý dữ liệu hiệu quả.</li><li><strong>Học tập dựa trên dự án</strong>: Xây dựng hơn 25 dự án trong thế giới thực bao gồm Lời nhắc sinh nhật, Trang web thương mại điện tử, Ứng dụng đố vui và Trình khám phá người dùng GitHub.</li></ul><p><br></p>",
+  "subTitle": "React: 25+ dự án có Next.js, TypeScript, Prisma, Zod, Shadcn, Axios, Router 6, Query 5, Redux Toolkit"
+},
+{
+  "_id": {
+    "$oid": "67d70072f437305f9bf94e8f"
+  },
+  "courseTitle": "Thực hành SQL từ A --> Z để trở thành Data Analyst",
+  "category": "Data Science",
+  "enrolledStudents": [
+    {
+      "$oid": "67d6c8b739aa6b391cf23bbe"
+    }
+  ],
+  "lectures": [
+    {
+      "$oid": "67d700c3f437305f9bf94ea6"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T16:46:42.988Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T16:59:58.338Z"
+  },
+  "__v": 1,
+  "courseLevel": "Beginner",
+  "coursePrice": 3990000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742143661/memsl4wdlpquywwbd744.jpg",
+  "description": "<p>Bạn sẽ học cách đọc và viết các truy vấn phức tạp vào cơ sở dữ liệu MS SQL SERVER.</p><p>Những kỹ năng này cũng có thể áp dụng cho bất kỳ cơ sở dữ liệu SQL nào khác, chẳng hạn như MySQL, Amazon Redshift, Oracle, v.v.</p><p>Học SQL là một trong những cách nhanh nhất để cải thiện triển vọng nghề nghiệp của bạn vì đây là một trong những kỹ năng công nghệ được yêu cầu nhiều nhất!</p><p><br></p><p>Có rất nhiều thử thách cũng như bài kiểm tra với độ khó từ cơ bản đến nâng cao để bạn dần dần phát triển khả năng và hiểu biết của mình!</p><p>Khóa học này sẽ giúp bạn nhanh chóng nắm bắt các kỹ năng cần thiết về SQL dành cho người phân tích dữ liệu. Tôi sẽ làm sáng tỏ kỹ năng truy vấn và giúp bạn hiểu các khái niệm thiết yếu về cách viết mã SQL một cách dễ dàng và hướng tư duy để giải quyết bài toán của riêng bạn.</p><p>​</p><p>Đầu tư cho việc học luôn luôn là đầu tư sinh lời. Hãy đầu tư cho bản thân ngay hôm nay và làm chủ Kỹ năng SQL.</p><h2><strong>Đối tượng của khóa học này:</strong></h2><ul><li>Khóa học dành cho bất cứ ai, không yêu cầu chứng chỉ hay kỹ năng liên quan</li><li>Những người mới muốn làm quen với mảng dữ liệu</li><li>Những ai muốn trở thành Data Analyst, Business Intelligence Developer, Data Engineer...</li><li>Làm trong các công ty mảng Tài chính, Ngân Hàng...</li></ul><p><br></p>",
+  "subTitle": "Học SQL từ con số 0 dành cho người làm việc trong mảng Dữ liệu"
+},
+{
+  "_id": {
+    "$oid": "67d7028bf437305f9bf94ed9"
+  },
+  "courseTitle": "Foundations of Web Development: CSS, Bootstrap, JS, React",
+  "category": "Frontend Development",
+  "enrolledStudents": [
+    {
+      "$oid": "67d6c8b739aa6b391cf23bbe"
+    }
+  ],
+  "lectures": [
+    {
+      "$oid": "67d702e7f437305f9bf94ee2"
+    }
+  ],
+  "creator": {
+    "$oid": "67d6c8b739aa6b391cf23bbe"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-03-16T16:55:39.806Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-16T17:13:02.109Z"
+  },
+  "__v": 1,
+  "courseLevel": "Beginner",
+  "coursePrice": 2990000,
+  "courseThumbnail": "https://res.cloudinary.com/dbgs7vcgh/image/upload/v1742144192/nqezkrvzetyudruy5zjk.jpg",
+  "description": "<p><strong>Khóa học thiết yếu cho người mới bắt đầu xây dựng nền tảng vững chắc trong phát triển web hiện đại: Hành trình toàn diện về thiết kế và lập trình web với CSS, Bootstrap, JavaScript và React</strong></p><p>Bạn đã bao giờ ngạc nhiên trước thiết kế bóng bẩy của các trang web hiện đại và tự hỏi làm thế nào chúng trở nên sống động chưa? Nhập Cascading Style Sheets (CSS), ngôn ngữ mã hóa không thể thiếu để định hình bố cục và thiết kế của trang web. Trong khóa học toàn diện này, chúng tôi đi sâu vào sự phức tạp của CSS 3, tiêu chuẩn kiểu dáng mới nhất, được đóng gói với các thuộc tính và tuyên bố sáng tạo để dễ dàng nâng cao thiết kế trang web của bạn. CSS tích hợp liền mạch với HTML, ngay cả với các tiêu chuẩn HTML 5 tiên tiến, cho phép bạn tạo các trang tương tác thu hút khán giả của mình.</p><p><strong>Điểm nổi bật của khóa học:</strong></p><ul><li>Giới thiệu về CSS</li><li>Bao gồm CSS trong HTML</li><li>Cú pháp CSS</li><li>Tạo kiểu văn bản bằng CSS</li><li>Hình nền trang với CSS</li><li>Chuyển đổi 2D và 3D trong CSS</li><li>Hoạt ảnh CSS</li><li>Và nhiều hơn nữa!</li></ul><p><strong>Phần 2: Khóa học Bootstrap Crash - Học Bootstrap từ đầu</strong></p><p>Mở khóa tiềm năng của Bootstrap với khóa học cấp tốc này bao gồm các yếu tố cần thiết của hệ thống lưới Bootstrap, cảnh báo, huy hiệu, biểu mẫu, điều hướng breadcrumb, nhãn, v.v. Nâng tầm trò chơi phát triển web của bạn với sức mạnh của Bootstrap, một khung giao diện người dùng giúp hợp lý hóa quy trình thiết kế và nâng cao khả năng phản hồi của trang web của bạn.</p><p><strong>Phần 3: Ngôn ngữ lập trình JavaScript - Từ các nguyên tắc cơ bản đến các ứng dụng trong thế giới thực</strong></p><p>Bắt tay vào hành trình thành thạo ngôn ngữ lập trình JavaScript với khóa học thực hành này. Được thiết kế cho người mới bắt đầu, chúng tôi bắt đầu bằng cách đặt nền tảng vững chắc về các nguyên tắc cơ bản về JavaScript, nguyên tắc lập trình và tương tác của người dùng. Khi chúng tôi tiến bộ, bạn sẽ chuyển đổi liền mạch từ các ứng dụng cơ bản sang các ứng dụng thực tế, chuẩn bị cho bạn những thách thức của bối cảnh phát triển JavaScript chuyên nghiệp.</p><p><strong>Điểm nổi bật của khóa học:</strong></p><ul><li>Giới thiệu về JavaScript</li><li>Các nguyên tắc cơ bản và lập trình JavaScript</li><li>Tương tác của người dùng với JavaScript</li><li>Kiến thức cơ bản về kịch bản JavaScript</li><li>Xử lý sự kiện và trình kích hoạt</li><li>Giới thiệu về Mô hình Đối tượng Tài liệu (DOM)</li><li>Các chủ đề nâng cao như mảng, đối tượng, biểu mẫu kịch bản và bảng</li><li>Ajax cho các cuộc gọi không đồng bộ đến các tập lệnh phía máy chủ</li><li><br></li><li><strong>Phần 4- Khóa học cấp tốc React</strong></li><li>Chào mừng bạn đến với React Crash Course, nơi chúng ta đi sâu vào những điều cần thiết của React, một trong những thư viện JavaScript mạnh mẽ và được sử dụng rộng rãi nhất để xây dựng giao diện người dùng. Khóa học này được thiết kế để cung cấp cho bạn sự hiểu biết thực tế về các khái niệm chính của React, đảm bảo bạn có thể tự tin tạo các ứng dụng web năng động và đáp ứng.</li><li>Thành phần React<strong>:</strong></li><li>Hiểu khối xây dựng cơ bản của các ứng dụng React.</li><li>Tìm hiểu cách cấu trúc và tạo các thành phần có thể tái sử dụng cho giao diện người dùng của bạn</li><li><strong>Đạo cụ phản ứng:</strong></li><li>Nắm vững khái niệm props (thuộc tính) để truyền dữ liệu giữa các thành phần React.</li><li>Khám phá các phương pháp hay nhất để duy trì hệ thống phân cấp thành phần sạch sẽ và hiệu quả.</li><li><strong>Dự án React Props:</strong></li><li>Áp dụng kiến thức của bạn bằng cách thực hiện một dự án thực hành.</li><li>Sử dụng đạo cụ React để xây dựng một ứng dụng web có chức năng và hấp dẫn.</li><li>Và hơn thế nữa...</li><li><br></li><li><em>Cảm ơn, hẹn gặp lại bên trong khóa học</em></li></ul><h2><strong>Đối tượng của khóa học này:</strong></h2><ul><li>Nhà phát triển web mới bắt đầu</li><li>Nhà phát triển Full Stack mới bắt đầu</li></ul><p><br></p>",
+  "subTitle": "Làm thế nào để thành thạo phát triển web: Tổng quan toàn diện về CSS, Bootstrap, JavaScript và React cho người mới bắt đầu"
+}]
