@@ -135,7 +135,7 @@ const Chat = () => {
         console.log("Sending to Gemini:", JSON.stringify(completeHistory, null, 2));
 
         response = await fetch(
-          "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=AIzaSyDIpW6uX0c83sEeJlTrrQZcY6TSVfaflC0",
+          "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=",
           geminiOptions
         );
 
