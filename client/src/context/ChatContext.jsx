@@ -174,7 +174,7 @@ export const ChatProvider = ({ children }) => {
       };
 
       const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=AIzaSyDIpW6uX0c83sEeJlTrrQZcY6TSVfaflC0",
+        "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key={YOUR-KEY}",
         requestOptions
       );
 
